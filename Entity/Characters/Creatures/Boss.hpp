@@ -8,11 +8,11 @@
 
 #include "../../AEntity.class.hpp"
 #include "../Character.class.hpp"
-#include "../../Weapons/Weapon.class.hpp"
 
-#include "Character.hpp"
+#include "Creature.hpp"
 
-class Boss:public Boss
+
+class Boss:public Creature
 {
     public:
     	Boss( void );
@@ -21,16 +21,14 @@ class Boss:public Boss
 
     	Boss const &		operator=( Boss const & rhs );
 
-#include "Creature.hpp"
+        virtual void            move( void ) {}
+        virtual void			hit( AEntity const & entity );
 
-class Boss:public Creature
-{
-    public:
-
-    virtual void	onEntityHit ( void );
+        virtual Boss * 			clone( void );
 
     protected:
 
 };
 
 #endif
+

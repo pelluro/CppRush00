@@ -13,8 +13,14 @@
 class Player:public Character
 {
     public:
+    	Player( void );
+    	Player( Player const & src );
+    	virtual ~Player( void );
 
-    virtual void	onEntityHit ( void );
+    	Player const &		operator=( Player const & rhs );
+
+        virtual void        hit( AEntity const & entity );
+        virtual void        move( void );
 
     protected:
 

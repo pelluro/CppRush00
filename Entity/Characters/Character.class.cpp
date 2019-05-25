@@ -42,6 +42,8 @@ Character const &		Character::operator=( Character const & rhs )
 	}
 	return *this;
 }
+
+
 int						Character::getHP( void ) const
 {
 	return this->_hp;
@@ -50,6 +52,13 @@ int						Character::getHP( void ) const
 void					Character::setHP( int hp )
 {
 	this->_hp = hp;
+}
+
+void					Character::takeDamage( int damage )
+{
+	if ( damage < 0 )
+		damage = 0;
+	this->setHP(this->getHP() - damage);
 }
 
 void					Character::equipWeapon( Weapon* weapon )
@@ -68,25 +77,3 @@ Weapon*					Character::getWeapon( void ) const
 {
 	return this->_weapon;
 }
-
-bool					Character::onMove( void )
-{
-	if (--this->_turn_before_move <= 0 )
-	{
-		this->_turn_before_move = this->_move_frequency;
-		return true;
-	}
-	return false;
-}
-
-void					Character::setMoveFrequency( int frequency )
-{
-	this->_move_frequency = frequency;
-	this->_turn_before_move = frequency;
-}
-
-void					Character::addToMoveFrequency( int frequency )
-{
-	this->_move_frequency += frequency;
-}
-

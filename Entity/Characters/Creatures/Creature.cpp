@@ -33,38 +33,14 @@ Creature const &		Creature::operator=( Creature const & rhs )
 	if (this != &rhs)
 	{
 		Character::operator=(rhs);
-		this->_action_frequency = rhs._action_frequency;
-		this->_turn_before_action = rhs._turn_before_action;
-		return *this;
 	}
+	return *this;
 }
 
-void					Creature::onEntityHit ( const AEntity & entity )
+void					Creature::hit( AEntity const & entity )
 {
-
-}
-
-
-bool	Creature::onAction( void )
-{
-	if (--this->_turn_before_action <= 0 )
+	if (entity.getType() == "player")
 	{
-		this->_turn_before_action = this->_action_frequency;
-		return true;
+		this->takeDamage(COLLISION_DAMAGE);
 	}
-	return false;
-
 }
-
-
-void	Creature::setActionFrequency( int frequency )
-{
-	this->_action_frequency = frequency;
-	this->_turn_before_action = frequency;
-}
-
-void	Creature::addToActionFrequency( int frequency )
-{
-	this->_action_frequency += frequency;
-}
-

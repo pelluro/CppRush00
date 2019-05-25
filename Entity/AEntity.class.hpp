@@ -18,6 +18,11 @@
 # include <string>
 # include <iostream>
 
+# define PLUS_X 0
+# define LESS_X 1
+# define PLUS_Y 2
+# define LESS_Y 3
+
 
 class AEntity
 {
@@ -31,18 +36,31 @@ class AEntity
 
 		AEntity const &		operator=( AEntity const & rhs );
 
-		virtual void	onEntityHit ( const AEntity &s ) = 0;
+		//	if can move true else false
+		virtual bool    onMove( void );
 
+		//	Actions
+		virtual void    hit( AEntity const & entity ) = 0;
+		virtual void    move( void );
 		void			move( int x, int y );
 
+        virtual AEntity *     clone( void ) = 0;
+
+		//	Variables
+    	void            setSpeed( int frequency );
+	    void            addSpeed( int frequency );
+
 		void			setX( int x );
-		int				getX( void );
+		int				getX( void ) const;
 
 		void			setY( int y );
-		int				getY( void );
+		int				getY( void ) const;
 
-		std::string		getName(void);
+		std::string		getName(void) const;
 		void			setName( std::string name);
+
+		std::string		getType(void) const;
+		void			setType( std::string type);
 
 	protected:
 		//	Positions
@@ -56,6 +74,9 @@ class AEntity
 		//	Entity class
 		std::string	_type;
 
+	    int			_speed;		// if <= 1 would be to do each turn
+		int			_turn_before_move;		// initiayze at _speed
+		int 		_direction;
 
 
 };

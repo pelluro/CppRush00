@@ -28,7 +28,7 @@ NCURSE := -lncurses
 files_matthieu := mainmatthieu.cpp
 
 srcfiles :=	Entity/AEntity.class.cpp				Entity/Characters/Character.class.cpp	\
-		Entity/Characters/Creatures/Creature.cpp	Entity/Characters/Creature/Boss.cpp		\
+		Entity/Characters/Creatures/Creature.cpp	Entity/Characters/Creatures/Boss.cpp	\
 		Map/Map.class.cpp	Map/Square.class.cpp					
 
 

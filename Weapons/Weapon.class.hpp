@@ -12,21 +12,28 @@
 class Weapon 
 {
     public:
-    Weapon( void );
-    Weapon( std::string type, int x, int y );
-    Weapon( Weapon const & src );
-    virtual ~Weapon( void );
+        Weapon( void );
+        Weapon( std::string type, int x, int y );
+        Weapon( Weapon const & src );
+        virtual ~Weapon( void );
 
-    Weapon const &          operator=( Weapon const & rhs );
+        Weapon const &          operator=( Weapon const & rhs );
 
-    virtual Weapon *        clone( void );
+        virtual Weapon *        clone( void );
 
-    // Copy de l'instance de missile enregistre dans weapon pour envoyer sur la carte
-    void        fire( int x, int y );
+        virtual bool            onAction( void );
+
+        void                    setActionFrequency( int frequency );
+        void                    addToActionFrequency( int frequency );
+
+
+        // Copy de l'instance de missile enregistre dans weapon pour envoyer sur la carte
+        void        fire( int x, int y );
 
     protected:
-
-    Missile * m;
+        int     _action_frequency;
+        int     _turn_before_action;
+        Missile m;
 
 
 };

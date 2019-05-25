@@ -63,12 +63,42 @@ AEntity const &		AEntity::operator=( AEntity const & rhs )
 	return (*this);
 }
 
-void	AEntity::move( int x, int y )
+
+
+void				AEntity::move( int x, int y )
 {
 	this->_x += x;
 	this->_y += y;
 	// If X leave map put x in map
 	// If Y leave map delete Entity (protected pop it)
+	// If checkEntity true onHit() else tab[y][x] = &Aentity
+}
+
+void            	AEntity::move( void )
+{
+	this->move(1, 0);
+}
+
+
+bool				AEntity::onMove( void )
+{
+	if (--this->_turn_before_move <= 0 )
+	{
+		this->_turn_before_move = this->_speed;
+		return true;
+	}
+	return false;
+}
+
+void				AEntity::setSpeed( int frequency )
+{
+	this->_speed = frequency;
+	this->_turn_before_move = frequency;
+}
+
+void				AEntity::addSpeed( int frequency )
+{
+	this->_speed += frequency;
 }
 
 
@@ -78,7 +108,7 @@ void	AEntity::setX( int x )
 	this->_x = x;
 }
 
-int		AEntity::getX( void )
+int		AEntity::getX( void ) const
 {
 	return this->_x;
 }
@@ -89,7 +119,29 @@ void	AEntity::setY( int y )
 	this->_y = y;
 }
 
-int		AEntity::getY( void )
+int		AEntity::getY( void ) const
 {
 	return this->_y;
 }
+
+std::string		AEntity::getName(void) const
+{
+	return this->_name;
+}
+
+void			AEntity::setName( std::string name)
+{
+	this->_name = name;
+}
+
+
+std::string		AEntity::getType(void) const
+{
+	return this->_type;
+}
+
+void			AEntity::setType( std::string type)
+{
+	this->_type = type;
+}
+
