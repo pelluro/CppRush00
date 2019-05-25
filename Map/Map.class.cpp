@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 #include "Map.class.hpp"
-=======
-#include"Map.class.hpp"
->>>>>>> origin/start-minh
+
 
 Map::Map( void )
 {

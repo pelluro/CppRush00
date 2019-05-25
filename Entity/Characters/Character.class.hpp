@@ -28,6 +28,8 @@ class Character: public AEntity
         void                  setHP( int hp );
         void                  takeDamage( int damage );
 
+        virtual int           getDealDamage( void ) const;
+
         void                  equipWeapon( Weapon* weapon );
         void                  unequipWeapon( void );
         Weapon*               getWeapon( void ) const;

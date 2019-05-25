@@ -11,7 +11,7 @@ Character::Character( std::string type, std::string name, int speed, int directi
 AEntity(type, name, speed, direction)
 {
 	this->setHP(hp);
-	this->equipWeapon(wepon);
+	this->equipWeapon(weapon);
 }
 Character::Character( Character const & src )
 {
@@ -35,7 +35,7 @@ Character const &		Character::operator=( Character const & rhs )
 	return *this;
 }
 
-void          			fire( void )
+void          			Character::fire( void )
 {
 
 }
@@ -56,6 +56,11 @@ void					Character::takeDamage( int damage )
 	if ( damage < 0 )
 		damage = 0;
 	this->setHP(this->getHP() - damage);
+}
+
+int						Character::getDealDamage( void ) const
+{
+	return (COLLISION_DAMAGE);
 }
 
 void					Character::equipWeapon( Weapon* weapon )

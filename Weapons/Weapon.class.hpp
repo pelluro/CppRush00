@@ -9,6 +9,8 @@
 # include "../Entity/Missiles/Missile.class.hpp"
 //weapon that's give missile
 
+class Missile;
+
 class Weapon 
 {
     public:

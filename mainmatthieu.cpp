@@ -35,14 +35,6 @@ void	initColor(void)
 
 int		main( void )
 {
-<<<<<<< HEAD:mainmatthieu.cpp
-	Map	map;
-	int x, y = -1;
-
-	while (++y < MAX_Y && (x = -1))
-		while(++x < MAX_X)
-			map.getEntity(y, x);
-=======
 	initscr();
 	initColor();
 	WINDOW *winGame, *winInfo;
@@ -61,7 +53,6 @@ int		main( void )
 	delwin(winGame);
 	delwin(winInfo);
 	endwin();
->>>>>>> origin/start-minh:main.cpp
 
 	return (0);
 

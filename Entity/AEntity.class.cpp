@@ -20,9 +20,10 @@ _x(0),_y(0), _name("nobody"), _type( NULL )
 
 }
 
-AEntity::AEntity( std::string name, std::string type, int x, int y ):
-_x(x),_y(y), _name( name ), _type( type )
+AEntity::AEntity( std::string name, std::string type, int speed, int direction ):
+_name(name), _type(type), _direction( direction )
 {
+	this->setSpeed(speed);
 
 }
 
@@ -76,13 +77,13 @@ void				AEntity::move( int x, int y )
 
 void            	AEntity::move( void )
 {
-	if (this->direction = LESS_Y)
+	if (this->_direction == LESS_Y)
 		this->move(-1, 0);
-	else if (this->direction = PLUS_Y)
+	else if (this->_direction == PLUS_Y)
 		this->move(1, 0);
-	else if (this->direction = LESS_X)
+	else if (this->_direction == LESS_X)
 		this->move(0, -1);
-	else if (this->direction = PLUS_X)
+	else if (this->_direction == PLUS_X)
 		this->move(0, 1);
 }
 

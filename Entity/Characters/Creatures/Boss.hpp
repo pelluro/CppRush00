@@ -10,7 +10,9 @@
 #include "../Character.class.hpp"
 
 #include "Creature.hpp"
+#include "../../../Weapons/Gun.hpp"
 
+class Gun;
 
 class Boss:public Creature
 {

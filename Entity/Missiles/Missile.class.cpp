@@ -1,19 +1,21 @@
-#include "Missile.hpp"
+#include "Missile.class.hpp"
 
 
 Missile::Missile( void ):
 AEntity("missile", "missile", 1, PLUS_Y)
 {
 	this->_deal_damage = 1;
+	this->_is_destroy = false;
 }
 
-Missile::Missile( int damage, int direction, int speed ):_deal_damage(damage)
+Missile::Missile( int damage, int direction, int speed ):
 AEntity("missile", "missile", speed, direction)
 {
 	this->_deal_damage = damage;
+	this->_is_destroy = false;
 }
 
-Missile::Missile( Missile const & src );
+Missile::Missile( Missile const & src )
 {
 	*this = src;
 }
@@ -23,17 +25,21 @@ Missile::~Missile( void )
 
 }
 
-const &		Missile::operator=( Missile const & rhs )
+Missile const &	Missile::operator=( Missile const & rhs )
 {
 	if (this != &rhs)
 	{
 		AEntity::operator=(rhs);
-		this->_deal_damage;
+		this->_deal_damage = rhs.getDealDamage();
 	}
-	return *this
+	return *this;
 }
 
-
+void	Missile::hit( const AEntity &s )
+{
+	(void)s;
+	this->_is_destroy = true;
+}
 
 int		Missile::getDealDamage( void ) const
 {
@@ -42,11 +48,12 @@ int		Missile::getDealDamage( void ) const
 
 Missile *	Missile::clone( void )
 {
-	return new Missile(this);
+	return new Missile(*this);
 }
 
 Missile *	Missile::clone( int direction )
 {
-	Missile * missile = new Missile(this);
+	Missile * missile = new Missile(*this);
 	missile->setDirection(direction);
+	return missile;
 }

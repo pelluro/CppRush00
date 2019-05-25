@@ -11,12 +11,17 @@ Weapon::Weapon( int action_frequency )
 	this->setActionFrequency(action_frequency);
 }
 
+Weapon::Weapon( Weapon const & src )
+{
+	*this = src;
+}
+
 Weapon::~Weapon( void )
 {
 
 }
 
-Weapon const &          operator=( Weapon const & rhs )
+Weapon const &          Weapon::operator=( Weapon const & rhs )
 {
 	if (this != &rhs)
 	{
@@ -24,9 +29,10 @@ Weapon const &          operator=( Weapon const & rhs )
 		this->_turn_before_action = rhs._turn_before_action;
 		this->m = rhs.m;
 	}
+	return *this;
 }
 
-virtual Weapon *        clone( void )
+Weapon *        		Weapon::clone( void )
 {
 	return new Weapon(*this);
 }
@@ -47,3 +53,4 @@ bool    Weapon::onAction( void )
 	}
 	return false;
 }
+

@@ -28,8 +28,7 @@ class AEntity
 {
 	public:
 		AEntity( void );
-        Creature( std::string type, std::string name, int speed, int direction );
-		AEntity( std::string name, std::string type, int x, int y );
+        AEntity( std::string type, std::string name, int speed, int direction );
 		AEntity( std::string name, std::string type );
 		AEntity( std::string type );
 		AEntity( AEntity const & src );
@@ -46,6 +45,8 @@ class AEntity
 		void			move( int x, int y );
 
         virtual AEntity *     clone( void ) = 0;
+
+        virtual int 	getDealDamage( void ) const = 0;
 
 		//	Variables
     	void            setSpeed( int frequency );

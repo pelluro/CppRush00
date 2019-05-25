@@ -6,16 +6,12 @@
 #    By: mipham <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/22 10:32:35 by mipham            #+#    #+#              #
-#    Updated: 2019/05/22 10:32:40 by mipham           ###   ########.fr        #
+#    Updated: 2019/05/25 19:34:43 by mconti           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-<<<<<<< HEAD
-NAME = test
-=======
 NAME = ft_retro
->>>>>>> origin/start-minh
 
 _GREEN = $'\033[32m
 _CYAN = $'\033[36m
@@ -26,18 +22,17 @@ _BLUE = $'\033[34m
 
 
 CXX := clang++
-CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -pedantic -lncurses
+CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -pedantic
 
-<<<<<<< HEAD
 files_matthieu := mainmatthieu.cpp
 
 srcfiles :=	Entity/AEntity.class.cpp				Entity/Characters/Character.class.cpp	\
-		Entity/Characters/Creatures/Creature.cpp	Entity/Characters/Creatures/Boss.cpp	\
-		Map/Map.class.cpp	Map/Square.class.cpp					
+		Entity/Missiles/Missile.class.cpp			Entity/Characters/Creatures/Creature.cpp	\
+		Entity/Characters/Creatures/Boss.cpp	\
+		Weapons/Weapon.class.cpp					Weapons/Gun.cpp							\
+		Map/Map.class.cpp	Map/Square.class.cpp	
 
-=======
-srcfiles := main.cpp
->>>>>>> origin/start-minh
+NCURSE = -lncurses
 
 objects  := $(subst .cpp,.o, $(srcfiles))
 

@@ -1,9 +1,10 @@
 #include "Boss.hpp"
 
 
-
-Boss::Boss( void ): Creature("boss", "Cthulu", 100)
+Boss::Boss( void ):
+Creature("boss", "Cthulu", 10000, 100, NULL)
 {
+	this->equipWeapon(new Gun);
 }
 
 Boss::Boss( Boss const & src )

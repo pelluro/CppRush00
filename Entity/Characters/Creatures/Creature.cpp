@@ -2,7 +2,8 @@
 
 
 
-Creature::Creature( void ): Character("creature", 1)
+Creature::Creature( void ):
+Character("creature", "creature", 1, PLUS_Y, 1, NULL)
 {
 
 }
@@ -40,5 +41,5 @@ void					Creature::hit( AEntity const & entity )
 		this->takeDamage(COLLISION_DAMAGE);
 	}
 	else if (entity.getType() == "missile")
-		this->takeDamage(entity.getDealDamage())
+		this->takeDamage(entity.getDealDamage());
 }

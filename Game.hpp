@@ -37,7 +37,6 @@ public:
 
 	int getTimer() const;
 	int getScore() const;
-	AEntity* getEntity(int i);
 
 
 	void loop(void);
@@ -48,6 +47,11 @@ public:
 	int startGame(void);
 	void gameOver(void);
 	void checkDeath(void); //de tout les entity
+
+	void addEntity(AEntity * entity);
+	void removeEntity(int idx);
+	AEntity* getEntity(int idx) const;
+	int getCount( void ) const;
 
 
 private:

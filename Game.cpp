@@ -46,3 +46,46 @@ int Game::listen(void)
 	}
 	return (1);
 }
+
+void		addEntity(AEntity * entity)
+{
+	int i = 0;
+	AEntity ** tmp = this->_entity;
+
+	if (!entity)
+		return (this->getCount());
+	while (i < this->getCount())
+		if (this->getUnit(i++) == entity)
+			return (this->getCount());
+
+	i = 0;
+
+	this->_entity = new AEntity*[this->getCount() + 1];
+
+
+	while (i < this->getCount())
+	{
+		this->_entity[i] = tmp[i];
+		i++;
+	}
+	this->_entity[i] = entity;
+	delete tmp;
+	return (++this->_count);
+}
+
+void		removeEntity(int idx)
+{
+
+}
+
+AEntity*	getEntity(int idx) const
+{
+	if (n < this->getCount() && idx >= 0)
+		return this->_entity[idx];
+	return NULL;
+}
+
+int			getCount( void ) const
+{
+	return this->_count;
+}
