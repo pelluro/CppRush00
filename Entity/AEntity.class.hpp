@@ -34,7 +34,7 @@ class AEntity
 		//virtual void	onPlayerHit( void ) = 0;
 		//virtual void	onEnemyHit( void ) = 0;
 
-		virtual void	onEntityHit ( void ) = 0;
+		virtual void	onEntityHit ( const AEntity &s ) = 0;
 
 
 		virtual bool	onEvent( void );
@@ -76,11 +76,7 @@ class AEntity
 		**			{ ... } 
 		**		return ;
 		*/
-		int			_action_frequency;		// if < 1 would be to do each turn
-		int			_turn_before_action;	// initiayze at _action_frequency
 
-		int			_move_frequency;		// if < 1 would be to do each turn
-		int			_turn_before_move;		// initiayze at _action_frequency
 
 
 };

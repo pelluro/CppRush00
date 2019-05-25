@@ -36,6 +36,10 @@ class Character: public AEntity
     int _hp;
     Weapon* weapon;
 
+    int			_move_frequency;		// if < 1 would be to do each turn
+	int			_turn_before_move;		// initiayze at _action_frequency
+
+
 
 };
 
