@@ -9,6 +9,7 @@
 #include "../../AEntity.class.hpp"
 #include "../Character.class.hpp"
 #include "../../Weapons/Weapon.class.hpp"
+
 #include "Character.hpp"
 
 class Boss:public Boss
@@ -19,6 +20,12 @@ class Boss:public Boss
     	virtual ~Boss( void );
 
     	Boss const &		operator=( Boss const & rhs );
+
+#include "Creature.hpp"
+
+class Boss:public Creature
+{
+    public:
 
     virtual void	onEntityHit ( void );
 

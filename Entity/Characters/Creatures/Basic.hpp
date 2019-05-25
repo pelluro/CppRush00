@@ -11,6 +11,7 @@
 #include "../../Weapons/Weapon.class.hpp"
 #include "Creature.hpp"
 
+
 class Basic:public Basic
 {
     public:
@@ -20,7 +21,11 @@ class Basic:public Basic
 
     	Basic const &		operator=( Basic const & rhs );
 
-    virtual void	onEntityHit ( void );
+class Basic:public Creature
+{
+    public:
+
+    	virtual void	onEntityHit ( void );
 
     protected:
 

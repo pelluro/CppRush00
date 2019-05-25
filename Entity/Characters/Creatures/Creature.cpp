@@ -38,3 +38,16 @@ void					Creature::onEntityHit ( void )
 {
 
 }
+
+
+void	Creature::setActionFrequency( int frequency )
+{
+	this->_action_frequency = frequency;
+	this->_turn_before_action = frequency;
+}
+
+void	Creature::addToActionFrequency( int frequency )
+{
+	this->_action_frequency += frequency;
+}
+

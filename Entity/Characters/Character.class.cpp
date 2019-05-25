@@ -68,3 +68,15 @@ Weapon*					Character::getWeapon( void ) const
 {
 	return this->_weapon;
 }
+
+void					Character::setMoveFrequency( int frequency )
+{
+	this->_move_frequency = frequency;
+	this->_turn_before_move = frequency;
+}
+
+void					Character::addToMoveFrequency( int frequency )
+{
+	this->_move_frequency += frequency;
+}
+

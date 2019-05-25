@@ -15,7 +15,6 @@ class Character: public AEntity
     Character( void );
     Character( int hp );
     Character( std::string type, int hp );
-    AEntity( std::string name, std::string type, int hp );
     Character( Character const & src );
     virtual ~Character( void );
 
@@ -31,10 +30,17 @@ class Character: public AEntity
 
     virtual void	onEntityHit ( void ) = 0;
 
+    void            setMoveFrequency( int frequency );
+    void            addToMoveFrequency( int frequency );
+
     protected:
     //health point
     int _hp;
     Weapon* weapon;
+
+    int			_move_frequency;		// if < 1 would be to do each turn
+	int			_turn_before_move;		// initiayze at _action_frequency
+
 
 
 };

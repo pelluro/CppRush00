@@ -34,7 +34,7 @@ class AEntity
 		//virtual void	onPlayerHit( void ) = 0;
 		//virtual void	onEnemyHit( void ) = 0;
 
-		virtual void	onEntityHit ( void ) = 0;
+		virtual void	onEntityHit ( const AEntity &s ) = 0;
 
 
 		virtual bool	onEvent( void );
@@ -51,14 +51,6 @@ class AEntity
 		std::string		getName(void);
 		void			setName( std::string name);
 
-		void			setActionFrequency( int frequency );
-		void			addToActionFrequency( int frequency );
-
-		void			setMoveFrequency( int frequency );
-		void			addToMoveFrequency( int frequency );
-
-		virtual void	display( void ) = 0;
-
 	protected:
 		//	Positions
 		int			_x;
@@ -71,16 +63,6 @@ class AEntity
 		//	Entity class
 		std::string	_type;
 
-		/*	on How many turn waiting to launch onEvent/onMove, every onEvent/onMove need to be like :
-		**		if (!AEntity::onEvent())
-		**			{ ... } 
-		**		return ;
-		*/
-		int			_action_frequency;		// if < 1 would be to do each turn
-		int			_turn_before_action;	// initiayze at _action_frequency
-
-		int			_move_frequency;		// if < 1 would be to do each turn
-		int			_turn_before_move;		// initiayze at _action_frequency
 
 
 };

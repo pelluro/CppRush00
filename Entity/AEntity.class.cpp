@@ -13,7 +13,10 @@
 
 
 #include "AEntity.class.hpp"
+<<<<<<< HEAD:Entity/AEntity.class.cpp
 
+=======
+>>>>>>> minh:Entity/AEntity.class.cpp
 
 
 AEntity::AEntity( void ):
@@ -126,28 +129,3 @@ int		AEntity::getY( void )
 {
 	return this->_y;
 }
-
-
-void	AEntity::setActionFrequency( int frequency )
-{
-	this->_action_frequency = frequency;
-	this->_turn_before_action = frequency;
-}
-
-void	AEntity::addToActionFrequency( int frequency )
-{
-	this->_action_frequency += frequency;
-}
-
-
-void	AEntity::setMoveFrequency( int frequency )
-{
-	this->_move_frequency = frequency;
-	this->_turn_before_move = frequency;
-}
-
-void	AEntity::addToMoveFrequency( int frequency )
-{
-	this->_move_frequency += frequency;
-}
-

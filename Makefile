@@ -25,7 +25,9 @@ CXX := clang++
 CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -pedantic
 NCURSE := -lncurses
 
-srcfiles := main.cpp Entity/AEntity.class.cpp
+srcfiles := main.cpp		Entity/AEntity.class.cpp	\
+		Map/Map.class.cpp	Map/Square.class.cpp
+
 objects  := $(subst .cpp,.o, $(srcfiles))
 
 

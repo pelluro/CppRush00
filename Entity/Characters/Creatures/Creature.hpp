@@ -23,8 +23,12 @@ class Creature: public Character
 
 		virtual void	onEntityHit ( void );
 
-    protected:
+        void            setActionFrequency( int frequency );
+        void            addToActionFrequency( int frequency );
 
+    protected:
+        int             _action_frequency;
+        int             turn_before_action;
 };
 
 #endif

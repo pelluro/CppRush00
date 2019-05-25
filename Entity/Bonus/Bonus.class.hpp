@@ -16,6 +16,9 @@ class Bonus:public AEntity
 
     protected:
 
+	int			_action_frequency;		// if < 1 would be to do each turn
+	int			_turn_before_action;	// initiayze at _action_frequency
+
 };
 
 #endif
