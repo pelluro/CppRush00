@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 
-NAME = eval_expr
+NAME = ft_retro
 
 _GREEN = $'\033[32m
 _CYAN = $'\033[36m
@@ -26,7 +26,8 @@ CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -pedantic
 NCURSE := -lncurses
 
 srcfiles := main.cpp		Entity/AEntity.class.cpp	\
-		Map/Map.class.cpp	Map/Square.class.cpp
+		Map/Map.class.cpp	Map/Square.class.cpp \
+		Ncurses.cpp
 
 objects  := $(subst .cpp,.o, $(srcfiles))
 

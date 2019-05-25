@@ -14,10 +14,14 @@
 #include "Entity/AEntity.class.hpp"
 # include <ncurses.h>
 # include "Map/Map.class.hpp"
+#include "Ncurses.hpp"
+#include <iostream>
 
 int		main( void )
 {
-	Map	map;
+	Ncurses e;
+	env(&e);
+	std::cout << "test Ncurses" << std::endl;
 	return (0);
 
 }

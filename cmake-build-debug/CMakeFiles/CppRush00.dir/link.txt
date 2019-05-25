@@ -1,0 +1,2 @@
+/bin/ar qc libCppRush00.a  CMakeFiles/CppRush00.dir/main.cpp.o CMakeFiles/CppRush00.dir/Ncurses.cpp.o CMakeFiles/CppRush00.dir/Entity/Bonus/Bonus.class.cpp.o CMakeFiles/CppRush00.dir/Entity/Bonus/WeaponUpgrade.class.cpp.o CMakeFiles/CppRush00.dir/Map/Map.class.cpp.o CMakeFiles/CppRush00.dir/Map/Square.class.cpp.o
+/bin/ranlib libCppRush00.a

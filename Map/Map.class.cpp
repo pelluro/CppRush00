@@ -23,7 +23,6 @@ Map const &		Map::operator=( Map const & rhs )
 }
 
 
-
 Square  const &	Map::getSquare( int y, int x )
 {
 	return this->_tab[y][x];
