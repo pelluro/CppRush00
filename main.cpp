@@ -19,4 +19,5 @@ int		main( void )
 {
 	Map	map;
 	return (0);
+
 }

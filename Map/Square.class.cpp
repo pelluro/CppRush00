@@ -1,4 +1,5 @@
 
+#include"Square.class.hpp"
 
 Square::Square( void )
 {

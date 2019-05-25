@@ -1,4 +1,4 @@
-
+#include"Map.class.hpp"
 
 Map::Map( void )
 {
