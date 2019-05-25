@@ -1,4 +1,3 @@
-
 #ifndef MAP_CLASS_H
 
 # define MAP_CLASS_H
@@ -11,9 +10,9 @@
 # define MAX_X	200
 # define MAX_Y	400
 
-class Map 
+class Map
 {
-    public:
+public:
 	Map( void );
 	Map( Map const & src );
 
@@ -27,6 +26,7 @@ class Map
 
 
 
+
 	Square const &	getSquare( int y, int x ) const;
 
     private:
@@ -36,3 +36,4 @@ class Map
 };
 
 #endif
+

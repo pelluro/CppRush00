@@ -23,6 +23,7 @@ class Character: public AEntity
 
         virtual void          fire( void );
 
+
         int                   getHP( void ) const;
         void                  setHP( int hp );
         void                  takeDamage( int damage );

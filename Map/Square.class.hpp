@@ -1,4 +1,3 @@
-
 #ifndef SQUARE_CLASS_H
 
 # define SQUARE_CLASS_H
@@ -7,10 +6,10 @@
 # include <iostream>
 # include "../Entity/AEntity.class.hpp"
 
-class Square 
+class Square
 {
-    public:
-    Square( void );
+public:
+	Square( void );
 	Square( Square const & src );
 
 	virtual ~Square( void );
@@ -21,9 +20,9 @@ class Square
 	void		setEntity( AEntity * entity );
 
 
-    private:
+private:
 
-    AEntity *   _entity;
+	AEntity *   _entity;
 
 
 

@@ -1,5 +1,5 @@
 
-#ifndef BONU_CLASS_H
+#ifndef BONUS_CLASS_H
 
 # define BONUS_CLASS_H
 

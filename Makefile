@@ -11,7 +11,11 @@
 # **************************************************************************** #
 
 
+<<<<<<< HEAD
 NAME = test
+=======
+NAME = ft_retro
+>>>>>>> origin/start-minh
 
 _GREEN = $'\033[32m
 _CYAN = $'\033[36m
@@ -22,15 +26,18 @@ _BLUE = $'\033[34m
 
 
 CXX := clang++
-CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -pedantic
-NCURSE := -lncurses
+CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -pedantic -lncurses
 
+<<<<<<< HEAD
 files_matthieu := mainmatthieu.cpp
 
 srcfiles :=	Entity/AEntity.class.cpp				Entity/Characters/Character.class.cpp	\
 		Entity/Characters/Creatures/Creature.cpp	Entity/Characters/Creatures/Boss.cpp	\
 		Map/Map.class.cpp	Map/Square.class.cpp					
 
+=======
+srcfiles := main.cpp
+>>>>>>> origin/start-minh
 
 objects  := $(subst .cpp,.o, $(srcfiles))
 
