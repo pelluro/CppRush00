@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Entity.class.cpp                                   :+:      :+:    :+:   */
+/*   AEntity.class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mconti <mconti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,20 +12,34 @@
 
 
 
-#include "Entity.class.hpp"
+#include "AEntity.class.hpp"
 
 
 
-
-AEntity::AEntity( void ): _x(0),_y(0), _type( NULL )
+AEntity::AEntity( void ):
+_x(0),_y(0), _type( NULL ), _name("nobody")
 {
 
 }
 
-AEntity::AEntity( std::string type, int x, int y ): _x(x),_y(y), _type( type )
+AEntity::AEntity( std::string name, std::string type, int x, int y ):
+_x(x),_y(y), _type( type ), _name( name )
 {
 
 }
+
+AEntity::AEntity( std::string name, std::string type ):
+_x(0), _y(0), _type(type), _name(name)
+{
+
+}
+
+AEntity::AEntity( std::string type ):
+_x(0), _y(0), _type(type), _name(type)
+{
+
+}
+
 
 AEntity::AEntity( AEntity const & src )
 {

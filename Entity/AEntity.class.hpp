@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Entity.class.hpp                                   :+:      :+:    :+:   */
+/*   AEntity.class.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mconti <mconti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 
-#ifndef ENTITY_CLASS_H
+#ifndef AENTITY_CLASS_H
 
-# define ENTITY_CLASS_H
+# define AENTITY_CLASS_H
 
 # include <string>
 # include <iostream>
@@ -23,14 +23,19 @@ class AEntity
 {
 	public:
 		AEntity( void );
-		AEntity( std::string type, int x, int y );
+		AEntity( std::string name, std::string type, int x, int y );
+		AEntity( std::string name, std::string type );
+		AEntity( std::string type );
 		AEntity( AEntity const & src );
 		virtual ~AEntity( void );
 
 		AEntity const &		operator=( AEntity const & rhs );
 
-		virtual void	onPlayerHit( void ) = 0;
-		virtual void	onEnemyHit( void ) = 0;
+		//virtual void	onPlayerHit( void ) = 0;
+		//virtual void	onEnemyHit( void ) = 0;
+
+		virtual void	onEntityHit ( void ) = 0;
+
 
 		virtual bool	onEvent( void );
 		virtual bool	onMove( void );
@@ -43,16 +48,25 @@ class AEntity
 		void			setY( int y );
 		int				getY( void );
 
+		std::string		getName(void);
+		void			setName( std::string name);
+
 		void			setActionFrequency( int frequency );
 		void			addToActionFrequency( int frequency );
 
 		void			setMoveFrequency( int frequency );
 		void			addToMoveFrequency( int frequency );
 
-	private:
+		virtual void	display( void ) = 0;
+
+	protected:
 		//	Positions
 		int			_x;
 		int 		_y;
+
+		//Entity name
+		std::string	_name;
+		
 
 		//	Entity class
 		std::string	_type;
