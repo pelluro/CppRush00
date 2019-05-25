@@ -21,12 +21,12 @@ Character::Character( std::string name, std::string type, int hp ):AEntity(name,
 	this->setHP(hp);
 }
 
-Character::Character( Character & const src ): AEntity(src)
+Character::Character( Character const & src )
 {
-	*this = rhs;
+	*this = src;
 }
 
-virtual Character::~Character( void )
+Character::~Character( void )
 {
 
 }
@@ -38,7 +38,7 @@ Character const &		Character::operator=( Character const & rhs )
 	{
 		AEntity::operator=( rhs );
 		this->setHP(rhs.getHP());
-		this->equipWeapon(rhs.getWeapon().clone());
+		this->equipWeapon(rhs.getWeapon()->clone());
 	}
 	return *this;
 }
@@ -55,7 +55,7 @@ void					Character::setHP( int hp )
 void					Character::equipWeapon( Weapon* weapon )
 {
 	this->unequipWeapon();
-	return this->_weapon = weapon;
+	this->_weapon = weapon;
 }
 
 void					Character::unequipWeapon( void )
@@ -69,8 +69,6 @@ Weapon*					Character::getWeapon( void ) const
 	return this->_weapon;
 }
 
-
-
 bool					Character::onMove( void )
 {
 	if (--this->_turn_before_move <= 0 )
@@ -80,6 +78,7 @@ bool					Character::onMove( void )
 	}
 	return false;
 }
+
 void					Character::setMoveFrequency( int frequency )
 {
 	this->_move_frequency = frequency;

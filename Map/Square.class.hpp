@@ -17,7 +17,9 @@ class Square
 
 	Square const &		operator=( Square const & rhs );
 
-	AEntity *	getEntity( void );
+	AEntity *	getEntity( void ) const;
+	void		setEntity( AEntity * entity );
+
 
     private:
 

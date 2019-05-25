@@ -18,5 +18,11 @@
 int		main( void )
 {
 	Map	map;
+	int x, y = -1;
+
+	while (++y < MAX_Y && (x = -1))
+		while(++x < MAX_X)
+			map.getEntity(y, x);
+
 	return (0);
 }

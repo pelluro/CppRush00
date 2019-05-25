@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 
-NAME = eval_expr
+NAME = test
 
 _GREEN = $'\033[32m
 _CYAN = $'\033[36m
@@ -25,12 +25,18 @@ CXX := clang++
 CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -pedantic
 NCURSE := -lncurses
 
-srcfiles := main.cpp		Entity/AEntity.class.cpp	\
-		Map/Map.class.cpp	Map/Square.class.cpp
+files_matthieu := mainmatthieu.cpp
+
+srcfiles :=	Entity/AEntity.class.cpp				Entity/Characters/Character.class.cpp	\
+		Entity/Characters/Creatures/Creature.cpp	Entity/Characters/Creature/Boss.cpp		\
+		Map/Map.class.cpp	Map/Square.class.cpp					
+
 
 objects  := $(subst .cpp,.o, $(srcfiles))
 
+objects_matthieu := $(subst .cpp,.o, $(files_matthieu))
 
+name_matthieu := matthieu_$(NAME)
 
 all: $(NAME)
 
@@ -40,6 +46,10 @@ $(NAME): $(objects)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $<
+
+matthieu: $(objects) $(objects_matthieu)
+	$(CXX) $(CXXFLAGS) $(NCURSE) $(objects) $(objects_matthieu) -o $(name_matthieu)
+	@echo "${_BLUE}$(NAME) generate${_END} ${_PURPLE}[!${_END}]"
 
 clean:
 	rm -f $(objects)

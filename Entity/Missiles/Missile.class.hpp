@@ -5,10 +5,9 @@
 
 # include <string>
 # include <iostream>
-# include "Weapon.class.hpp"
-//weapon that's give missile
+# include "../AEntity.class.hpp"
 
-class Missile : public Weapon 
+class Missile : public AEntity
 {
     public:
     Missile( void );
@@ -17,10 +16,9 @@ class Missile : public Weapon
 	virtual ~Missile( void );
 
 	Missile const &		operator=( Missile const & rhs );
-<<<<<<< HEAD
-=======
-    virtual void	onEntityHit ( void );
->>>>>>> minh
+
+    virtual void	onEntityHit ( const AEntity &s );
+
 
 
     protected:
@@ -31,3 +29,4 @@ class Missile : public Weapon
 };
 
 #endif
+

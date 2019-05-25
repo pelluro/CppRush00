@@ -1,28 +1,28 @@
-#include "Creature.class.hpp"
+#include "Creature.hpp"
 
 
 
-Creature::Creature( void ): Character(1, "creature")
+Creature::Creature( void ): Character("creature", 1)
 {
 
 }
 
-Creature::Creature( std::string type, int hp ): Character(hp, type)
+Creature::Creature( std::string type, int hp ): Character(type, hp)
 {
 
 }
 
-Creature::Creature( std::string type std::string name, int hp ): Character(hp, type, name)
+Creature::Creature( std::string type, std::string name, int hp ): Character(type, name, hp)
 {
 
 }
 
-Creature::Creature( Creature & const src )
+Creature::Creature( Creature const & src )
 {
-	*this = rhs;
+	*this = src;
 }
 
-virtual Creature::~Creature( void )
+Creature::~Creature( void )
 {
 
 }
@@ -30,11 +30,16 @@ virtual Creature::~Creature( void )
 
 Creature const &		Creature::operator=( Creature const & rhs )
 {
-	Character::operator=(rhs);
-	return *this;
+	if (this != &rhs)
+	{
+		Character::operator=(rhs);
+		this->_action_frequency = rhs._action_frequency;
+		this->_turn_before_action = rhs._turn_before_action;
+		return *this;
+	}
 }
 
-void					Creature::onEntityHit ( void )
+void					Creature::onEntityHit ( const AEntity & entity )
 {
 
 }
