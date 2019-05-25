@@ -24,7 +24,7 @@ class Character: public AEntity
     int     getHP( void ) const;
     void    setHP( int hp );
 
-    void    equipWeapon( Weapon* weapon );
+    void    equipWeapon(  weapon );
     void    unequipWeapon( void );
     Weapon* getWeapon( void ) const;
 

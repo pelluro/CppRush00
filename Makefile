@@ -22,12 +22,9 @@ _BLUE = $'\033[34m
 
 
 CXX := clang++
-CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -pedantic
-NCURSE := -lncurses
+CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -pedantic -lncurses
 
-srcfiles := main.cpp		Entity/AEntity.class.cpp	\
-		Map/Map.class.cpp	Map/Square.class.cpp \
-		Ncurses.cpp
+srcfiles := main.cpp
 
 objects  := $(subst .cpp,.o, $(srcfiles))
 

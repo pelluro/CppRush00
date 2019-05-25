@@ -5,6 +5,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/CppRush00.dir/Entity/Bonus/WeaponUpgrade.class.cpp.o"
   "CMakeFiles/CppRush00.dir/Map/Map.class.cpp.o"
   "CMakeFiles/CppRush00.dir/Map/Square.class.cpp.o"
+  "CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.o"
+  "CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.o"
+  "CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.o"
+  "CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.o"
+  "CMakeFiles/CppRush00.dir/Game.cpp.o"
+  "CMakeFiles/CppRush00.dir/Header.cpp.o"
   "libCppRush00.pdb"
   "libCppRush00.a"
 )

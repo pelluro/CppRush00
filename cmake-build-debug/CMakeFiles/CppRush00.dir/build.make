@@ -135,6 +135,84 @@ CMakeFiles/CppRush00.dir/Map/Square.class.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CppRush00.dir/Map/Square.class.cpp.s"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pelluro/Documents/Work/CppRush00/Map/Square.class.cpp -o CMakeFiles/CppRush00.dir/Map/Square.class.cpp.s
 
+CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.o: CMakeFiles/CppRush00.dir/flags.make
+CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.o: ../Entity/Bonus/HealthPack.class.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.o -c /home/pelluro/Documents/Work/CppRush00/Entity/Bonus/HealthPack.class.cpp
+
+CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.i"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pelluro/Documents/Work/CppRush00/Entity/Bonus/HealthPack.class.cpp > CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.i
+
+CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.s"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pelluro/Documents/Work/CppRush00/Entity/Bonus/HealthPack.class.cpp -o CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.s
+
+CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.o: CMakeFiles/CppRush00.dir/flags.make
+CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.o: ../Entity/Characters/Creatures/Creature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.o -c /home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Creature.cpp
+
+CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.i"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Creature.cpp > CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.i
+
+CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.s"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Creature.cpp -o CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.s
+
+CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.o: CMakeFiles/CppRush00.dir/flags.make
+CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.o: ../Entity/Characters/Creatures/Boss.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.o -c /home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Boss.cpp
+
+CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.i"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Boss.cpp > CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.i
+
+CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.s"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Boss.cpp -o CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.s
+
+CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.o: CMakeFiles/CppRush00.dir/flags.make
+CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.o: ../Entity/Characters/Character.class.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.o -c /home/pelluro/Documents/Work/CppRush00/Entity/Characters/Character.class.cpp
+
+CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.i"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pelluro/Documents/Work/CppRush00/Entity/Characters/Character.class.cpp > CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.i
+
+CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.s"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pelluro/Documents/Work/CppRush00/Entity/Characters/Character.class.cpp -o CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.s
+
+CMakeFiles/CppRush00.dir/Game.cpp.o: CMakeFiles/CppRush00.dir/flags.make
+CMakeFiles/CppRush00.dir/Game.cpp.o: ../Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/CppRush00.dir/Game.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CppRush00.dir/Game.cpp.o -c /home/pelluro/Documents/Work/CppRush00/Game.cpp
+
+CMakeFiles/CppRush00.dir/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CppRush00.dir/Game.cpp.i"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pelluro/Documents/Work/CppRush00/Game.cpp > CMakeFiles/CppRush00.dir/Game.cpp.i
+
+CMakeFiles/CppRush00.dir/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CppRush00.dir/Game.cpp.s"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pelluro/Documents/Work/CppRush00/Game.cpp -o CMakeFiles/CppRush00.dir/Game.cpp.s
+
+CMakeFiles/CppRush00.dir/Header.cpp.o: CMakeFiles/CppRush00.dir/flags.make
+CMakeFiles/CppRush00.dir/Header.cpp.o: ../Header.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/CppRush00.dir/Header.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CppRush00.dir/Header.cpp.o -c /home/pelluro/Documents/Work/CppRush00/Header.cpp
+
+CMakeFiles/CppRush00.dir/Header.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CppRush00.dir/Header.cpp.i"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pelluro/Documents/Work/CppRush00/Header.cpp > CMakeFiles/CppRush00.dir/Header.cpp.i
+
+CMakeFiles/CppRush00.dir/Header.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CppRush00.dir/Header.cpp.s"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pelluro/Documents/Work/CppRush00/Header.cpp -o CMakeFiles/CppRush00.dir/Header.cpp.s
+
 # Object files for target CppRush00
 CppRush00_OBJECTS = \
 "CMakeFiles/CppRush00.dir/main.cpp.o" \
@@ -142,7 +220,13 @@ CppRush00_OBJECTS = \
 "CMakeFiles/CppRush00.dir/Entity/Bonus/Bonus.class.cpp.o" \
 "CMakeFiles/CppRush00.dir/Entity/Bonus/WeaponUpgrade.class.cpp.o" \
 "CMakeFiles/CppRush00.dir/Map/Map.class.cpp.o" \
-"CMakeFiles/CppRush00.dir/Map/Square.class.cpp.o"
+"CMakeFiles/CppRush00.dir/Map/Square.class.cpp.o" \
+"CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.o" \
+"CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.o" \
+"CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.o" \
+"CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.o" \
+"CMakeFiles/CppRush00.dir/Game.cpp.o" \
+"CMakeFiles/CppRush00.dir/Header.cpp.o"
 
 # External object files for target CppRush00
 CppRush00_EXTERNAL_OBJECTS =
@@ -153,9 +237,15 @@ libCppRush00.a: CMakeFiles/CppRush00.dir/Entity/Bonus/Bonus.class.cpp.o
 libCppRush00.a: CMakeFiles/CppRush00.dir/Entity/Bonus/WeaponUpgrade.class.cpp.o
 libCppRush00.a: CMakeFiles/CppRush00.dir/Map/Map.class.cpp.o
 libCppRush00.a: CMakeFiles/CppRush00.dir/Map/Square.class.cpp.o
+libCppRush00.a: CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.o
+libCppRush00.a: CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.o
+libCppRush00.a: CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.o
+libCppRush00.a: CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.o
+libCppRush00.a: CMakeFiles/CppRush00.dir/Game.cpp.o
+libCppRush00.a: CMakeFiles/CppRush00.dir/Header.cpp.o
 libCppRush00.a: CMakeFiles/CppRush00.dir/build.make
 libCppRush00.a: CMakeFiles/CppRush00.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libCppRush00.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX static library libCppRush00.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/CppRush00.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CppRush00.dir/link.txt --verbose=$(VERBOSE)
 

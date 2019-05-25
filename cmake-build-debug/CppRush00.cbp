@@ -90,10 +90,52 @@
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/Bonus.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/HealthPack.class.cpp">
+			<Option target="CppRush00"/>
+		</Unit>
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/HealthPack.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/WeaponUpgrade.class.cpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/WeaponUpgrade.class.hpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Character.class.cpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Character.class.hpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Basic.hpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Boss.cpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Boss.hpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Creature.cpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Creature.hpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Player.class.hpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Game.cpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Game.hpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Header.cpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Header.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Map/Map.class.cpp">

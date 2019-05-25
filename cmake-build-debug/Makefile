@@ -150,6 +150,33 @@ Entity/Bonus/Bonus.class.cpp.s:
 	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Bonus/Bonus.class.cpp.s
 .PHONY : Entity/Bonus/Bonus.class.cpp.s
 
+Entity/Bonus/HealthPack.class.o: Entity/Bonus/HealthPack.class.cpp.o
+
+.PHONY : Entity/Bonus/HealthPack.class.o
+
+# target to build an object file
+Entity/Bonus/HealthPack.class.cpp.o:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.o
+.PHONY : Entity/Bonus/HealthPack.class.cpp.o
+
+Entity/Bonus/HealthPack.class.i: Entity/Bonus/HealthPack.class.cpp.i
+
+.PHONY : Entity/Bonus/HealthPack.class.i
+
+# target to preprocess a source file
+Entity/Bonus/HealthPack.class.cpp.i:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.i
+.PHONY : Entity/Bonus/HealthPack.class.cpp.i
+
+Entity/Bonus/HealthPack.class.s: Entity/Bonus/HealthPack.class.cpp.s
+
+.PHONY : Entity/Bonus/HealthPack.class.s
+
+# target to generate assembly for a file
+Entity/Bonus/HealthPack.class.cpp.s:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.s
+.PHONY : Entity/Bonus/HealthPack.class.cpp.s
+
 Entity/Bonus/WeaponUpgrade.class.o: Entity/Bonus/WeaponUpgrade.class.cpp.o
 
 .PHONY : Entity/Bonus/WeaponUpgrade.class.o
@@ -176,6 +203,141 @@ Entity/Bonus/WeaponUpgrade.class.s: Entity/Bonus/WeaponUpgrade.class.cpp.s
 Entity/Bonus/WeaponUpgrade.class.cpp.s:
 	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Bonus/WeaponUpgrade.class.cpp.s
 .PHONY : Entity/Bonus/WeaponUpgrade.class.cpp.s
+
+Entity/Characters/Character.class.o: Entity/Characters/Character.class.cpp.o
+
+.PHONY : Entity/Characters/Character.class.o
+
+# target to build an object file
+Entity/Characters/Character.class.cpp.o:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.o
+.PHONY : Entity/Characters/Character.class.cpp.o
+
+Entity/Characters/Character.class.i: Entity/Characters/Character.class.cpp.i
+
+.PHONY : Entity/Characters/Character.class.i
+
+# target to preprocess a source file
+Entity/Characters/Character.class.cpp.i:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.i
+.PHONY : Entity/Characters/Character.class.cpp.i
+
+Entity/Characters/Character.class.s: Entity/Characters/Character.class.cpp.s
+
+.PHONY : Entity/Characters/Character.class.s
+
+# target to generate assembly for a file
+Entity/Characters/Character.class.cpp.s:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.s
+.PHONY : Entity/Characters/Character.class.cpp.s
+
+Entity/Characters/Creatures/Boss.o: Entity/Characters/Creatures/Boss.cpp.o
+
+.PHONY : Entity/Characters/Creatures/Boss.o
+
+# target to build an object file
+Entity/Characters/Creatures/Boss.cpp.o:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.o
+.PHONY : Entity/Characters/Creatures/Boss.cpp.o
+
+Entity/Characters/Creatures/Boss.i: Entity/Characters/Creatures/Boss.cpp.i
+
+.PHONY : Entity/Characters/Creatures/Boss.i
+
+# target to preprocess a source file
+Entity/Characters/Creatures/Boss.cpp.i:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.i
+.PHONY : Entity/Characters/Creatures/Boss.cpp.i
+
+Entity/Characters/Creatures/Boss.s: Entity/Characters/Creatures/Boss.cpp.s
+
+.PHONY : Entity/Characters/Creatures/Boss.s
+
+# target to generate assembly for a file
+Entity/Characters/Creatures/Boss.cpp.s:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.s
+.PHONY : Entity/Characters/Creatures/Boss.cpp.s
+
+Entity/Characters/Creatures/Creature.o: Entity/Characters/Creatures/Creature.cpp.o
+
+.PHONY : Entity/Characters/Creatures/Creature.o
+
+# target to build an object file
+Entity/Characters/Creatures/Creature.cpp.o:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.o
+.PHONY : Entity/Characters/Creatures/Creature.cpp.o
+
+Entity/Characters/Creatures/Creature.i: Entity/Characters/Creatures/Creature.cpp.i
+
+.PHONY : Entity/Characters/Creatures/Creature.i
+
+# target to preprocess a source file
+Entity/Characters/Creatures/Creature.cpp.i:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.i
+.PHONY : Entity/Characters/Creatures/Creature.cpp.i
+
+Entity/Characters/Creatures/Creature.s: Entity/Characters/Creatures/Creature.cpp.s
+
+.PHONY : Entity/Characters/Creatures/Creature.s
+
+# target to generate assembly for a file
+Entity/Characters/Creatures/Creature.cpp.s:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.s
+.PHONY : Entity/Characters/Creatures/Creature.cpp.s
+
+Game.o: Game.cpp.o
+
+.PHONY : Game.o
+
+# target to build an object file
+Game.cpp.o:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Game.cpp.o
+.PHONY : Game.cpp.o
+
+Game.i: Game.cpp.i
+
+.PHONY : Game.i
+
+# target to preprocess a source file
+Game.cpp.i:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Game.cpp.i
+.PHONY : Game.cpp.i
+
+Game.s: Game.cpp.s
+
+.PHONY : Game.s
+
+# target to generate assembly for a file
+Game.cpp.s:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Game.cpp.s
+.PHONY : Game.cpp.s
+
+Header.o: Header.cpp.o
+
+.PHONY : Header.o
+
+# target to build an object file
+Header.cpp.o:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Header.cpp.o
+.PHONY : Header.cpp.o
+
+Header.i: Header.cpp.i
+
+.PHONY : Header.i
+
+# target to preprocess a source file
+Header.cpp.i:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Header.cpp.i
+.PHONY : Header.cpp.i
+
+Header.s: Header.cpp.s
+
+.PHONY : Header.s
+
+# target to generate assembly for a file
+Header.cpp.s:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Header.cpp.s
+.PHONY : Header.cpp.s
 
 Map/Map.class.o: Map/Map.class.cpp.o
 
@@ -297,9 +459,27 @@ help:
 	@echo "... Entity/Bonus/Bonus.class.o"
 	@echo "... Entity/Bonus/Bonus.class.i"
 	@echo "... Entity/Bonus/Bonus.class.s"
+	@echo "... Entity/Bonus/HealthPack.class.o"
+	@echo "... Entity/Bonus/HealthPack.class.i"
+	@echo "... Entity/Bonus/HealthPack.class.s"
 	@echo "... Entity/Bonus/WeaponUpgrade.class.o"
 	@echo "... Entity/Bonus/WeaponUpgrade.class.i"
 	@echo "... Entity/Bonus/WeaponUpgrade.class.s"
+	@echo "... Entity/Characters/Character.class.o"
+	@echo "... Entity/Characters/Character.class.i"
+	@echo "... Entity/Characters/Character.class.s"
+	@echo "... Entity/Characters/Creatures/Boss.o"
+	@echo "... Entity/Characters/Creatures/Boss.i"
+	@echo "... Entity/Characters/Creatures/Boss.s"
+	@echo "... Entity/Characters/Creatures/Creature.o"
+	@echo "... Entity/Characters/Creatures/Creature.i"
+	@echo "... Entity/Characters/Creatures/Creature.s"
+	@echo "... Game.o"
+	@echo "... Game.i"
+	@echo "... Game.s"
+	@echo "... Header.o"
+	@echo "... Header.i"
+	@echo "... Header.s"
 	@echo "... Map/Map.class.o"
 	@echo "... Map/Map.class.i"
 	@echo "... Map/Map.class.s"

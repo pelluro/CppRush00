@@ -28,7 +28,20 @@ Square  const &	Map::getSquare( int y, int x )
 	return this->_tab[y][x];
 }
 
-AEntity *		Map::getEntity( int y, int x )
+
+AEntity *		Map::getEntity( int y, int x ) const
 {
-	return this->getSquare()->getEntity();
+	std::cout << "[ " << y << ", " << x << " ]" << std::endl;
+	return this->getSquare(y, x).getEntity();
 }
+
+void			Map::setEntity( int y, int x, AEntity * entity )
+{
+	this->_tab[y][x].setEntity(entity);
+}
+
+void			Map::removeEntity( int y, int x )
+{
+	this->_tab[y][x].setEntity(NULL);
+}
+

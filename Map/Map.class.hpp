@@ -1,4 +1,3 @@
-
 #ifndef MAP_CLASS_H
 
 # define MAP_CLASS_H
@@ -9,11 +8,11 @@
 # include "../Entity/AEntity.class.hpp"
 
 # define MAX_X	200
-# define MAP_Y	400
+# define MAX_Y	400
 
-class Map 
+class Map
 {
-    public:
+public:
 	Map( void );
 	Map( Map const & src );
 
@@ -21,14 +20,19 @@ class Map
 
 	Map const &		operator=( Map const & rhs );
 
-	AEntity *		getEntity( int y, int x );
+	AEntity *		getEntity( int y, int x ) const;
+	void			setEntity( int y, int x, AEntity * entity );
+	void			removeEntity( int y, int x );
+
+
+
 	Square const &	getSquare( int y, int x );
 
+private:
 
-    private:
-
-    Square			_tab[MAP_Y][MAX_X];
+	Square			_tab[MAX_Y][MAX_X];
 
 };
 
 #endif
+

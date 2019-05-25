@@ -5,20 +5,27 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#include "Header.hpp"
 #include "Entity/AEntity.class.hpp"
 #include "Entity/Characters/Player.class.hpp"
 #include <ncurses.h>
 #include <ctime>
+
+
+#define WIDTH COLS
+#define HEIGHT (LINES - 9)
+#define FPS 50
+
 class Game
 {
 protected:
-	AEntity   *_entity;
+	AEntity   **_entity;
 	int     _timer;
 	int     _score;
 	WINDOW  *_winInfo;
 	WINDOW  *_winGame;
-	int     _ray;
+	int		_count;
+
+
 
 public:
 	Game(void);
@@ -27,12 +34,11 @@ public:
 	Game(const Game & src);
 	Game & operator = (const Game & src);
 
-//	 *getPlayer() const;
-	int getFPS() const;
+
 	int getTimer() const;
 	int getScore() const;
-//	 *getObjects() const;
-	int getRay() const;
+	AEntity* getEntity(int i);
+
 
 	void loop(void);
 	int listen(void);
@@ -41,8 +47,8 @@ public:
 	void displayInfo(void);
 	int startGame(void);
 	void gameOver(void);
-	void checkCollisions(void);
-	void checkDeath(void);
+	void checkDeath(void); //de tout les entity
+
 
 private:
 	clock_t _time;
