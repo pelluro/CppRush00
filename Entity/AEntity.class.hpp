@@ -57,8 +57,6 @@ class AEntity
 		void			setMoveFrequency( int frequency );
 		void			addToMoveFrequency( int frequency );
 
-		virtual void	display( void ) = 0;
-
 	protected:
 		//	Positions
 		int			_x;

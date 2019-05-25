@@ -13,7 +13,10 @@
 
 
 #include "AEntity.class.hpp"
+<<<<<<< HEAD:Entity/AEntity.class.cpp
 
+=======
+>>>>>>> minh:Entity/AEntity.class.cpp
 
 
 AEntity::AEntity( void ):

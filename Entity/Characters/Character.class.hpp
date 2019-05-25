@@ -15,7 +15,6 @@ class Character: public AEntity
     Character( void );
     Character( int hp );
     Character( std::string type, int hp );
-    AEntity( std::string name, std::string type, int hp );
     Character( Character const & src );
     virtual ~Character( void );
 

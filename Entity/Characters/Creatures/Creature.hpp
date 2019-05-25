@@ -10,6 +10,7 @@
 #include "../Character.class.hpp"
 #include "../../Weapons/Weapon.class.hpp"
 
+<<<<<<< HEAD
 class Creature: public Character
 {
     public:
@@ -22,6 +23,13 @@ class Creature: public Character
     	Creature const &		operator=( Creature const & rhs );
 
 		virtual void	onEntityHit ( void );
+=======
+class Creature:public Character
+{
+    public:
+
+    virtual void	onEntityHit ( void );
+>>>>>>> minh
 
     protected:
 
