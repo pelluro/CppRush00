@@ -15,25 +15,25 @@
 #include "AEntity.class.hpp"
 
 AEntity::AEntity( void ):
-_x(0),_y(0), _type( NULL ), _name("nobody")
+_x(0),_y(0), _name("nobody"), _type( NULL )
 {
 
 }
 
 AEntity::AEntity( std::string name, std::string type, int x, int y ):
-_x(x),_y(y), _type( type ), _name( name )
+_x(x),_y(y), _name( name ), _type( type )
 {
 
 }
 
 AEntity::AEntity( std::string name, std::string type ):
-_x(0), _y(0), _type(type), _name(name)
+_x(0), _y(0), _name(name), _type(type)
 {
 
 }
 
 AEntity::AEntity( std::string type ):
-_x(0), _y(0), _type(type), _name(type)
+_x(0), _y(0), _name(type), _type(type)
 {
 
 }
@@ -59,12 +59,6 @@ AEntity const &		AEntity::operator=( AEntity const & rhs )
 		this->_y = rhs._y;
 
 		this->_type = rhs._type;
-
-		this->_action_frequency = rhs._action_frequency;
-		this->_turn_before_action = rhs._turn_before_action;
-
-		this->_move_frequency = rhs._move_frequency;
-		this->_turn_before_move = rhs._turn_before_move;
 	}
 	return (*this);
 }
