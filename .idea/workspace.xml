@@ -9,17 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2033a9f-a587-4c15-8ead-dfdd14a7ec0b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEntity.class.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEntity.class.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Characters/Character.class.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Characters/Creatures/Basic.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Characters/Creatures/Boss.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Characters/Creatures/Creature.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Characters/Player.class.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Missiles/Missile.class.hpp" beforeDir="false" />
-    </list>
+    <list default="true" id="d2033a9f-a587-4c15-8ead-dfdd14a7ec0b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,16 +153,15 @@
       <option name="presentableId" value="Default" />
       <updated>1558768722150</updated>
       <workItem from="1558768723368" duration="354000" />
-      <workItem from="1558775100196" duration="294000" />
+      <workItem from="1558775100196" duration="325000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="648000" />
+    <option name="totallyTimeSpent" value="679000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2524013" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

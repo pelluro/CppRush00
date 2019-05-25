@@ -17,6 +17,7 @@ class Missile : public Weapon
 	virtual ~Missile( void );
 
 	Missile const &		operator=( Missile const & rhs );
+    virtual void	onEntityHit ( void );
 
 
     protected:
