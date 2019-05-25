@@ -15,14 +15,13 @@ class Character: public AEntity
 {
     public:
         Character( void );
-        Character( int hp );
-        Character( std::string type, int hp );
-        Character( std::string name, std::string type, int hp );
+        Character( std::string type, std::string name, int speed, int direction, int hp, Weapon * weapon );
         Character( Character const & src );
         virtual ~Character( void );
 
         Character const &     operator=( Character const & rhs );
 
+        virtual void          fire( void );
 
         int                   getHP( void ) const;
         void                  setHP( int hp );

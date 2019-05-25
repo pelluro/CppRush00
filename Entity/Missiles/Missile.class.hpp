@@ -21,6 +21,9 @@ class Missile : public AEntity
 		virtual void        move( void );
 
 		virtual Missile *	clone( void );
+		virtual Missile *	clone( int direction );
+
+		int					getDealDamage( void ) const;
 
     protected:
     	int					_deal_damage;

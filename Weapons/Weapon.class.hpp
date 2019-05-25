@@ -13,7 +13,7 @@ class Weapon
 {
     public:
         Weapon( void );
-        Weapon( std::string type, int x, int y );
+        Weapon( int action_frequency );
         Weapon( Weapon const & src );
         virtual ~Weapon( void );
 
@@ -21,14 +21,11 @@ class Weapon
 
         virtual Weapon *        clone( void );
 
-        virtual bool            onAction( void );
+        bool                    onAction( void );
 
         void                    setActionFrequency( int frequency );
-        void                    addToActionFrequency( int frequency );
 
 
-        // Copy de l'instance de missile enregistre dans weapon pour envoyer sur la carte
-        void        fire( int x, int y );
 
     protected:
         int     _action_frequency;

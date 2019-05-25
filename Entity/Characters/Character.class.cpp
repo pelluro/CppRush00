@@ -7,20 +7,12 @@ Character::Character( void ): AEntity()
 	this->setHP(1);
 }
 
-Character::Character( int hp ):AEntity()
+Character::Character( std::string type, std::string name, int speed, int direction, int hp, Weapon * weapon ):
+AEntity(type, name, speed, direction)
 {
 	this->setHP(hp);
+	this->equipWeapon(wepon);
 }
-Character::Character( std::string type, int hp ):AEntity(type)
-{
-	this->setHP(hp);
-}
-
-Character::Character( std::string name, std::string type, int hp ):AEntity(name, type)
-{
-	this->setHP(hp);
-}
-
 Character::Character( Character const & src )
 {
 	*this = src;
@@ -41,6 +33,11 @@ Character const &		Character::operator=( Character const & rhs )
 		this->equipWeapon(rhs.getWeapon()->clone());
 	}
 	return *this;
+}
+
+void          			fire( void )
+{
+
 }
 
 

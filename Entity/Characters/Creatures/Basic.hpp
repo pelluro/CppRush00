@@ -20,7 +20,7 @@ class Basic:public Creature
 
     	Basic const &		operator=( Basic const & rhs );
 
-        virtual void            move( void );
+        virtual Basic * 			clone( void );
 
     protected:
 

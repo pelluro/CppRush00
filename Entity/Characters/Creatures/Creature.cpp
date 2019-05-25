@@ -7,12 +7,8 @@ Creature::Creature( void ): Character("creature", 1)
 
 }
 
-Creature::Creature( std::string type, int hp ): Character(type, hp)
-{
-
-}
-
-Creature::Creature( std::string type, std::string name, int hp ): Character(type, name, hp)
+Creature::Creature( std::string type, std::string name, int speed, int hp, Weapon * weapon ):
+Character(type, name, speed, PLUS_Y, hp, weapon)
 {
 
 }
@@ -43,4 +39,6 @@ void					Creature::hit( AEntity const & entity )
 	{
 		this->takeDamage(COLLISION_DAMAGE);
 	}
+	else if (entity.getType() == "missile")
+		this->takeDamage(entity.getDealDamage())
 }

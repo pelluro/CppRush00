@@ -28,6 +28,7 @@ class AEntity
 {
 	public:
 		AEntity( void );
+        Creature( std::string type, std::string name, int speed, int direction );
 		AEntity( std::string name, std::string type, int x, int y );
 		AEntity( std::string name, std::string type );
 		AEntity( std::string type );
@@ -49,6 +50,9 @@ class AEntity
 		//	Variables
     	void            setSpeed( int frequency );
 	    void            addSpeed( int frequency );
+
+    	void            setDirection( int direction );
+	    int             getDirection( void ) const;
 
 		void			setX( int x );
 		int				getX( void ) const;

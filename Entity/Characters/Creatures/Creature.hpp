@@ -13,14 +13,14 @@ class Creature: public Character
 {
     public:
         Creature( void );
-        Creature( std::string type, int hp );
-        Creature( std::string type, std::string name, int hp );
+        Creature( std::string type, std::string name, int speed, int hp, Weapon * weapon );
         Creature( Creature const & src );
         virtual ~Creature( void );
 
 
 
         Creature const &        operator=( Creature const & rhs );
+
         virtual void            hit( AEntity const & entity );
 
 

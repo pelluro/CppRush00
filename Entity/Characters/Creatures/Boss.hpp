@@ -22,7 +22,6 @@ class Boss:public Creature
     	Boss const &		operator=( Boss const & rhs );
 
         virtual void            move( void ) {}
-        virtual void			hit( AEntity const & entity );
 
         virtual Boss * 			clone( void );
 

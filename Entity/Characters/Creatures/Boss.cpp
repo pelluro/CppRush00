@@ -26,11 +26,6 @@ Boss const &		Boss::operator=( Boss const & rhs )
 	return *this;
 }
 
-void					Boss::hit( AEntity const & entity )
-{
-	(void)entity;
-}
-
 Boss *		 			Boss::clone( void )
 {
 	return new Boss(*this);

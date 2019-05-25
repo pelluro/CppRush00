@@ -76,7 +76,14 @@ void				AEntity::move( int x, int y )
 
 void            	AEntity::move( void )
 {
-	this->move(1, 0);
+	if (this->direction = LESS_Y)
+		this->move(-1, 0);
+	else if (this->direction = PLUS_Y)
+		this->move(1, 0);
+	else if (this->direction = LESS_X)
+		this->move(0, -1);
+	else if (this->direction = PLUS_X)
+		this->move(0, 1);
 }
 
 
@@ -101,6 +108,15 @@ void				AEntity::addSpeed( int frequency )
 	this->_speed += frequency;
 }
 
+void            	AEntity::setDirection( int direction )
+{
+	this->_direction = direction;
+}
+
+int             	AEntity::getDirection( void ) const
+{
+	return this->_direction;
+}
 
 
 void	AEntity::setX( int x )
