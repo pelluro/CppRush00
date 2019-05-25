@@ -13,11 +13,6 @@
 
 
 #include "AEntity.class.hpp"
-<<<<<<< HEAD:Entity/AEntity.class.cpp
-
-=======
->>>>>>> minh:Entity/AEntity.class.cpp
-
 
 AEntity::AEntity( void ):
 _x(0),_y(0), _type( NULL ), _name("nobody")
@@ -81,31 +76,6 @@ void	AEntity::move( int x, int y )
 	// If X leave map put x in map
 	// If Y leave map delete Entity (protected pop it)
 }
-
-bool	AEntity::onEvent( void )
-{
-	if (--this->_turn_before_action <= 0 )
-	{
-		this->_turn_before_action = this->_action_frequency;
-		return true;
-	}
-	return false;
-
-}
-
-bool	AEntity::onMove( void )
-{
-	if (--this->_turn_before_move <= 0 )
-	{
-		this->_turn_before_move = this->_move_frequency;
-		return true;
-	}
-	return false;
-
-}
-
-
-
 
 
 

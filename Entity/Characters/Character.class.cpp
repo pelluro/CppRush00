@@ -69,6 +69,17 @@ Weapon*					Character::getWeapon( void ) const
 	return this->_weapon;
 }
 
+
+
+bool					Character::onMove( void )
+{
+	if (--this->_turn_before_move <= 0 )
+	{
+		this->_turn_before_move = this->_move_frequency;
+		return true;
+	}
+	return false;
+}
 void					Character::setMoveFrequency( int frequency )
 {
 	this->_move_frequency = frequency;

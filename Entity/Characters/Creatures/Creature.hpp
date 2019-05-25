@@ -23,6 +23,8 @@ class Creature: public Character
 
 		virtual void	onEntityHit ( void );
 
+        virtual bool    onAction( void ) = 0;
+
         void            setActionFrequency( int frequency );
         void            addToActionFrequency( int frequency );
 

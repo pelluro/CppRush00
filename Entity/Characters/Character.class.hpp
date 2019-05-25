@@ -30,6 +30,8 @@ class Character: public AEntity
 
     virtual void	onEntityHit ( void ) = 0;
 
+    virtual bool    onAction( void ) = 0;
+
     void            setMoveFrequency( int frequency );
     void            addToMoveFrequency( int frequency );
 

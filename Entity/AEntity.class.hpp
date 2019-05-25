@@ -31,14 +31,7 @@ class AEntity
 
 		AEntity const &		operator=( AEntity const & rhs );
 
-		//virtual void	onPlayerHit( void ) = 0;
-		//virtual void	onEnemyHit( void ) = 0;
-
 		virtual void	onEntityHit ( const AEntity &s ) = 0;
-
-
-		virtual bool	onEvent( void );
-		virtual bool	onMove( void );
 
 		void			move( int x, int y );
 

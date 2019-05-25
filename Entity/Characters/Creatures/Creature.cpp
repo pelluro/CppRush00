@@ -40,6 +40,18 @@ void					Creature::onEntityHit ( void )
 }
 
 
+bool	Creature::onAction( void )
+{
+	if (--this->_turn_before_action <= 0 )
+	{
+		this->_turn_before_action = this->_action_frequency;
+		return true;
+	}
+	return false;
+
+}
+
+
 void	Creature::setActionFrequency( int frequency )
 {
 	this->_action_frequency = frequency;
