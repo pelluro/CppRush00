@@ -25,6 +25,7 @@ AEntity("missile", '|', speed, direction)
 Missile::Missile( Missile const & src )
 {
 	*this = src;
+	this->_is_destroy = false;
 }
 
 Missile::~Missile( void )
@@ -57,9 +58,7 @@ bool		Missile::toDelete( void )
 {
 	if (this->AEntity::toDelete())
 		return true;
-	if (this->_is_destroy)
-		return true;
-	return false;
+	return this->_is_destroy;
 }
 
 void	Missile::hit( const AEntity &s )
@@ -71,6 +70,16 @@ void	Missile::hit( const AEntity &s )
 int		Missile::getDealDamage( void ) const
 {
 	return this->_deal_damage;
+}
+
+bool	Missile::getIsDestroy( void ) const
+{
+	return this->_is_destroy;
+}
+
+void	Missile::setIsDestroy( bool b )
+{
+	this->_is_destroy = b;
 }
 
 Missile *	Missile::clone( void )

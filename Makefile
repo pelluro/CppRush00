@@ -24,9 +24,7 @@ _BLUE = $'\033[34m
 CXX := clang++
 CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -pedantic
 
-files_matthieu := mainmatthieu.cpp
-
-srcfiles :=	Entity/AEntity.class.cpp			\
+srcfiles :=	main.cpp Entity/AEntity.class.cpp			\
 		Entity/Characters/Character.class.cpp	\
 		Entity/Characters/Player.class.cpp \
 		Entity/Characters/Creatures/Creature.cpp	\
@@ -44,8 +42,6 @@ NCURSE = -lncurses
 objects  := $(subst .cpp,.o, $(srcfiles))
 
 objects_matthieu := $(subst .cpp,.o, $(files_matthieu))
-
-name_matthieu := matthieu_$(NAME)
 
 all: $(NAME)
 

@@ -43,6 +43,7 @@ void          			Character::fire( void )
 	missile->setY(this->getY());
 	missile->setX(this->getX());
 	missile->forceMove();
+	missile->setIsDestroy(false);
 	game->addEntity(missile);
 }
 

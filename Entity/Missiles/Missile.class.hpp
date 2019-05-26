@@ -31,6 +31,9 @@ class Missile : public AEntity
 
 		virtual int			getDealDamage( void ) const;
 
+        bool         getIsDestroy( void ) const;
+        void         setIsDestroy( bool b );
+
     protected:
     	int					_deal_damage;
     	bool				_is_destroy;
