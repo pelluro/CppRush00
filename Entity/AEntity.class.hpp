@@ -38,13 +38,7 @@ class AEntity
 		virtual ~AEntity( void );
 
 		AEntity const &		operator=( AEntity const & rhs );
-
-<<<<<<< HEAD
-=======
-		//	if can move true else false
-//		 virtual bool    onMove( void );
-
->>>>>>> origin/debug2
+		
 		//	Actions
 		virtual void    hit( AEntity const & entity );
 		virtual void	move( int dx, int dy );
