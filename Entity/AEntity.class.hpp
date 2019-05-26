@@ -40,7 +40,7 @@ class AEntity
 		AEntity const &		operator=( AEntity const & rhs );
 
 		//	if can move true else false
-		// virtual bool    onMove( void );
+//		 virtual bool    onMove( void );
 
 		//	Actions
 		virtual void    hit( AEntity const & entity ) = 0;

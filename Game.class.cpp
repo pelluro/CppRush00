@@ -67,7 +67,7 @@ void Game::start()
 		o << i << "||" << this->getCount() << "||" << this->_player->getHP() << std::endl;
 		this->log(o.str());
 		this->iterate();
-		if(i == 6000)
+		if(i == 30000)
 		{
 			i = 0;
 		}
@@ -75,8 +75,8 @@ void Game::start()
 			case 15:
 			{
 				AEntity* unit = new Basic();
-				unit->setX(20);
-				unit->setY(2);
+				unit->setX(rand() % WIDTH - 2 );
+				unit->setY(1);
 				this->addEntity(unit);
 				break;
 			}
