@@ -100,7 +100,12 @@ void Map::print(WINDOW *w)
 			{
 				AEntity* entity = s->getEntity();
 				wmove(w, y, x);
-				waddch(w, entity->getType() | COLOR_PAIR(3));
+				if (entity->getType() == 'X')
+					waddch(w, entity->getType() | COLOR_PAIR(5));
+				else if (entity->getType() == '^')
+					waddch(w, entity->getType() | COLOR_PAIR(2));
+				else
+					waddch(w, entity->getType());
 			}
 			s = NULL;
 		}
