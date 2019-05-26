@@ -36,9 +36,11 @@ public:
 	//void gameOver(void);
 	//void checkDeath(void); //de tout les entity
 
-	//int addEntity(AEntity * entity);
-	//void removeEntity(int idx);
-	//int getCount( void ) const;
+	int addEntity(AEntity * entity);
+	AEntity *getEntity( int idx ) const;
+	void removeEntity(int idx);
+	int getCount( void ) const;
+
 	void log(std::string);
 
 private:

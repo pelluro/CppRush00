@@ -60,7 +60,7 @@ class AEntity
 		std::string		getName(void) const;
 		void			setName( std::string name);
 
-		char		getType(void) const;
+		char			getType(void) const;
 		void			setType( char type);
 
 		virtual void    		move( void );

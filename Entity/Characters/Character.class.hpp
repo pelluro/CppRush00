@@ -10,6 +10,7 @@
 #include "../../Weapons/Weapon.class.hpp"
 
 
+# define COLLISION_DAMAGE 1
 
 class Character: public AEntity
 {
@@ -23,8 +24,8 @@ class Character: public AEntity
 
         virtual void          fire( void );
 
-		virtual void    		move( void );
-		virtual bool			onMove( void );
+//		virtual void    		move( void );
+//		virtual bool			onMove( void );
 
         int                   getHP( void ) const;
         void                  setHP( int hp );

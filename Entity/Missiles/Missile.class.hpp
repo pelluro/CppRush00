@@ -16,8 +16,8 @@ class Missile : public AEntity
 
 		virtual ~Missile( void );
 
-		virtual void    		move( void );
-		virtual bool			onMove( void );
+//		virtual void    		move( void );
+//		virtual bool			onMove( void );
 
 		Missile const &		operator=( Missile const & rhs );
 
