@@ -1,11 +1,20 @@
 
 #include "Map.class.hpp"
+#include <ncurses.h>
+#include <sstream>
 
 
 Map::Map( void )
 {
-
+	for (int x = 0; x < WIDTH; x++)
+	{
+		for (int y = 0; y < HEIGHT; y++)
+		{
+			this->_tab[x][y] = new Square();
+		}
+	}
 }
+
 Map::Map( Map const & src )
 {
 	*this = src;
@@ -27,24 +36,86 @@ Map const &		Map::operator=( Map const & rhs )
 
 
 
-Square  const &	Map::getSquare( int y, int x ) const
+Square*  const &	Map::getSquare( int x, int y ) const
 {
-	return this->_tab[y][x];
+	return this->_tab[x][y];
 }
 
-AEntity *		Map::getEntity( int y, int x ) const
+void Map::addEntity(AEntity *entity)
 {
-	std::cout << "[ " << y << ", " << x << " ]" << std::endl;
-	return this->getSquare(y, x).getEntity();
+	int x = entity->getX();
+	int y = entity->getY();
+	if(x < WIDTH && y < HEIGHT)
+	{
+		if (!this->_tab[x][y]->hasEntity())
+			this->_tab[x][y]->setEntity(entity);
+		else
+		{
+			// Une entite a essaye d etre ajoute sur la carte ou une autre se trouve deja
+		}
+	}
+	else
+	{
+		// Hors ecran
+	}
 }
 
-void			Map::setEntity( int y, int x, AEntity * entity )
+void Map::updateEntity(AEntity *entity)
 {
-	this->_tab[y][x].setEntity(entity);
+	this->removeEntity(entity->getOldX(), entity->getOldY());
+	this->addEntity(entity);
 }
 
-void			Map::removeEntity( int y, int x )
+void Map::removeEntity(int x, int y)
 {
-	this->_tab[y][x].setEntity(NULL);
+	this->_tab[x][y]->setEntity(NULL);
 }
 
+void Map::print(WINDOW *w)
+{
+	// Vide l ecran
+	// Affiche les bordures
+	for (int i = 0; i < HEIGHT; i++)
+	{
+		wmove(w, i, 0);
+		waddch(w, '*');
+		wmove(w, i, WIDTH-1);
+		waddch(w, '*');
+	}
+	for (int x = 0; x < WIDTH; x++)
+	{
+		for (int y = 0; y < HEIGHT; y++)
+		{
+			Square* s = this->getSquare(x, y);
+			if(s->hasEntity())
+			{
+				AEntity* entity = s->getEntity();
+				wmove(w, entity->getOldY(), entity->getOldX());
+				waddch(w, ' ');
+				wmove(w, entity->getY(), entity->getX());
+				waddch(w, entity->getType());
+			}
+		}
+	}
+
+	// Affiche l ecran
+	wrefresh(w);
+}
+
+std::string Map::toString()
+{
+	std::stringstream o;
+	for (int x = 0; x < WIDTH; x++)
+	{
+		for (int y = 0; y < HEIGHT; y++)
+		{
+			Square* s = this->getSquare(x,y);
+			if(s->hasEntity())
+			{
+				AEntity* entity = s->getEntity();
+				o << "Entite '" << entity->getName() << "' en (" << entity->getX() << "," << entity->getY() << ")" << " | ";
+			}
+		}
+	}
+	return o.str();
+}

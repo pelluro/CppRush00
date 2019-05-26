@@ -13,11 +13,13 @@ class Creature: public Character
 {
     public:
         Creature( void );
-        Creature( std::string type, std::string name, int speed, int hp, Weapon * weapon );
+        Creature( char type, std::string name, int speed, int direction, int hp, Weapon * weapon );
         Creature( Creature const & src );
         virtual ~Creature( void );
 
-
+		virtual void    		move( void );
+		virtual bool			onMove( void );
+		virtual void			move( int dx, int dy );
 
         Creature const &        operator=( Creature const & rhs );
 
@@ -25,7 +27,10 @@ class Creature: public Character
 
 
 
-    protected:
+
+
+protected:
+
 
 };
 

@@ -9,13 +9,13 @@
 #include "../AEntity.class.hpp"
 #include "../../Weapons/Weapon.class.hpp"
 
-# define COLLISION_DAMAGE 1
+
 
 class Character: public AEntity
 {
     public:
         Character( void );
-        Character( std::string type, std::string name, int speed, int direction, int hp, Weapon * weapon );
+        Character( char type, std::string name, int hp, Weapon * weapon );
         Character( Character const & src );
         virtual ~Character( void );
 
@@ -23,6 +23,8 @@ class Character: public AEntity
 
         virtual void          fire( void );
 
+		virtual void    		move( void );
+		virtual bool			onMove( void );
 
         int                   getHP( void ) const;
         void                  setHP( int hp );

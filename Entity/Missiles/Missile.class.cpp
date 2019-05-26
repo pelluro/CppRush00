@@ -2,14 +2,14 @@
 
 
 Missile::Missile( void ):
-AEntity("missile", "missile", 1, PLUS_Y)
+AEntity("missile", '|')
 {
 	this->_deal_damage = 1;
 	this->_is_destroy = false;
 }
 
 Missile::Missile( int damage, int direction, int speed ):
-AEntity("missile", "missile", speed, direction)
+AEntity("missile", '|', speed, direction)
 {
 	this->_deal_damage = damage;
 	this->_is_destroy = false;

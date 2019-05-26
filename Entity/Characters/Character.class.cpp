@@ -7,8 +7,8 @@ Character::Character( void ): AEntity()
 	this->setHP(1);
 }
 
-Character::Character( std::string type, std::string name, int speed, int direction, int hp, Weapon * weapon ):
-AEntity(type, name, speed, direction)
+Character::Character( char type, std::string name, int hp, Weapon * weapon ):
+AEntity(name, type)
 {
 	this->setHP(hp);
 	this->equipWeapon(weapon);

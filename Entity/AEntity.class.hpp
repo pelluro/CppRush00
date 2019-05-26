@@ -12,7 +12,6 @@
 
 
 #ifndef AENTITY_CLASS_H
-
 # define AENTITY_CLASS_H
 
 # include <string>
@@ -22,68 +21,74 @@
 # define LESS_X 1
 # define PLUS_Y 2
 # define LESS_Y 3
-
+# define PLUS_X_PLUS_Y 5
+# define LESS_X_PLUS_Y 6
+# define PLUS_X_LESS_Y 7
+# define LESS_X_LESS_Y 8
 
 class AEntity
 {
 	public:
 		AEntity( void );
-        AEntity( std::string type, std::string name, int speed, int direction );
-		AEntity( std::string name, std::string type );
-		AEntity( std::string type );
+		AEntity( std::string name, char type );
+		AEntity( std::string name, char type, int speed, int direction );
+		AEntity( char type );
 		AEntity( AEntity const & src );
 		virtual ~AEntity( void );
 
 		AEntity const &		operator=( AEntity const & rhs );
 
 		//	if can move true else false
-		virtual bool    onMove( void );
+		// virtual bool    onMove( void );
 
 		//	Actions
 		virtual void    hit( AEntity const & entity ) = 0;
-		virtual void    move( void );
-		void			move( int x, int y );
+		virtual void			move( int dx, int dy );
 
-        virtual AEntity *     clone( void ) = 0;
+        //virtual AEntity *     clone( void ) = 0;
 
         virtual int 	getDealDamage( void ) const = 0;
 
 		//	Variables
-    	void            setSpeed( int frequency );
-	    void            addSpeed( int frequency );
-
-    	void            setDirection( int direction );
-	    int             getDirection( void ) const;
-
 		void			setX( int x );
 		int				getX( void ) const;
-
+		int				getOldX( void ) const;
 		void			setY( int y );
 		int				getY( void ) const;
+		int				getOldY( void ) const;
 
 		std::string		getName(void) const;
 		void			setName( std::string name);
 
-		std::string		getType(void) const;
-		void			setType( std::string type);
+		char		getType(void) const;
+		void			setType( char type);
 
-	protected:
+		virtual void    		move( void );
+		virtual bool			onMove( void );
+		void            setSpeed( int frequency );
+		void            addSpeed( int frequency );
+
+		void            setDirection( int direction );
+		int             getDirection( void ) const;
+
+
+protected:
 		//	Positions
 		int			_x;
 		int 		_y;
+		int			_oldX;
+		int 		_oldY;
+
+		int			_speed;		// if <= 1 would be to do each turn
+		int			_turn_before_move;		// initialize at _speed
+		int 		_direction;
 
 		//Entity name
 		std::string	_name;
-		
+
 
 		//	Entity class
-		std::string	_type;
-
-	    int			_speed;		// if <= 1 would be to do each turn
-		int			_turn_before_move;		// initiayze at _speed
-		int 		_direction;
-
-
+		char _type;
 };
 
 

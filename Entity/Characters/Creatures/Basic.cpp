@@ -2,7 +2,7 @@
 
 
 
-Basic::Basic( void ): Creature("Basic", "monster", 1, 1, new )
+Basic::Basic( void ): Creature('^', "monster", 1, PLUS_Y ,1 , NULL)
 {
 	
 }
@@ -32,4 +32,12 @@ Basic *		 			Basic::clone( void )
 	return new Basic(*this);
 }
 
-
+void    		Basic::move( void ){
+	AEntity::move();
+}
+void    		Basic::move( int dx, int dy  ){
+	AEntity::move(dx,dy);
+}
+bool			Basic::onMove( void ){
+	return AEntity::onMove();
+}

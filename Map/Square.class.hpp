@@ -18,6 +18,7 @@ public:
 
 	AEntity *	getEntity( void ) const;
 	void		setEntity( AEntity * entity );
+	bool		hasEntity(void);
 
 
 private:

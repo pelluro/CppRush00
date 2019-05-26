@@ -4,11 +4,10 @@
 
 # include <string>
 # include <iostream>
+# include <ncurses.h>
 # include "Square.class.hpp"
 # include "../Entity/AEntity.class.hpp"
-
-# define MAX_X	200
-# define MAX_Y	400
+# include "../Constants.hpp"
 
 class Map
 {
@@ -20,19 +19,20 @@ public:
 
 	Map const &		operator=( Map const & rhs );
 
-	AEntity *		getEntity( int y, int x ) const;
-	void			setEntity( int y, int x, AEntity * entity );
-	void			removeEntity( int y, int x );
+	AEntity *		getEntity( int x, int y ) const;
+	//void			setEntity( int y, int x, AEntity * entity );
+	void			addEntity(AEntity* entity);
+	void			updateEntity(AEntity* entity);
+	void			removeEntity( int x, int y );
 
+	void 			print(WINDOW * w);
+	std::string		toString();
 
-
-
-	Square const &	getSquare( int y, int x ) const;
+	Square* const &	getSquare( int x, int y ) const;
 
     private:
 
-    Square			_tab[MAX_Y][MAX_X];
-
+    Square*			_tab[999][999];
 };
 
 #endif

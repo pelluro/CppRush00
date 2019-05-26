@@ -11,13 +11,7 @@
 /* ************************************************************************** */
 
 
-#include "Entity/AEntity.class.hpp"
-# include <ncurses.h>
-# include "Map/Map.class.hpp"
-#include "Ncurses.hpp"
-#include <iostream>
-#define WIDTH COLS
-#define HEIGHT (LINES - 9)
+#include "Game.class.hpp"
 
 
 void	initColor(void)
@@ -37,23 +31,14 @@ int		main( void )
 {
 	initscr();
 	initColor();
-	WINDOW *winGame, *winInfo;
-
-	winGame = subwin(stdscr, HEIGHT, WIDTH, 0, 0);
-	winInfo = subwin(stdscr, 8, WIDTH / 3, HEIGHT, 0);
-
 	noecho();
-	timeout(1);
-	curs_set(FALSE);
+	curs_set(0);
 	keypad(stdscr, TRUE);
-	getch();
 
-	std::cout << "test Ncurses" << std::endl;
+	Game* g = new Game();
+	g->start();
+	delete g;
 
-	delwin(winGame);
-	delwin(winInfo);
 	endwin();
-
 	return (0);
-
 }

@@ -84,6 +84,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Constants.hpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/AEntity.class.cpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/AEntity.class.hpp">
+			<Option target="CppRush00"/>
+		</Unit>
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/Bonus.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
@@ -108,6 +117,9 @@
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Character.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Basic.cpp">
+			<Option target="CppRush00"/>
+		</Unit>
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Basic.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
@@ -123,19 +135,22 @@
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Creature.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Player.class.cpp">
+			<Option target="CppRush00"/>
+		</Unit>
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Player.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Game.cpp">
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Missiles/Missile.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Game.hpp">
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Missiles/Missile.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Header.cpp">
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Game.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Header.hpp">
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Game.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Map/Map.class.cpp">
@@ -150,13 +165,7 @@
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Map/Square.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Ncurses.cpp">
-			<Option target="CppRush00"/>
-		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Ncurses.hpp">
-			<Option target="CppRush00"/>
-		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/main.cpp">
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/mainmatthieu.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/CMakeLists.txt">

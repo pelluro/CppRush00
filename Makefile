@@ -26,11 +26,18 @@ CXXFLAGS := -std=c++98 -Wall -Wextra -Werror -pedantic
 
 files_matthieu := mainmatthieu.cpp
 
-srcfiles :=	Entity/AEntity.class.cpp				Entity/Characters/Character.class.cpp	\
-		Entity/Missiles/Missile.class.cpp			Entity/Characters/Creatures/Creature.cpp	\
+srcfiles :=	Entity/AEntity.class.cpp			\
+		Entity/Characters/Character.class.cpp	\
+		Entity/Characters/Player.class.cpp \
+		Entity/Characters/Creatures/Creature.cpp	\
 		Entity/Characters/Creatures/Boss.cpp	\
-		Weapons/Weapon.class.cpp					Weapons/Gun.cpp							\
-		Map/Map.class.cpp	Map/Square.class.cpp	
+		Entity/Characters/Creatures/Basic.cpp	\
+        Entity/Missiles/Missile.class.cpp			\
+		Weapons/Weapon.class.cpp					\
+		Weapons/Gun.cpp							\
+		Map/Map.class.cpp	\
+		Map/Square.class.cpp	\
+		Game.class.cpp \
 
 NCURSE = -lncurses
 

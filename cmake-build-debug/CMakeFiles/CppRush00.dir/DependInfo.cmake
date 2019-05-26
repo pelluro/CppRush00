@@ -4,18 +4,20 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/pelluro/Documents/Work/CppRush00/Entity/AEntity.class.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Entity/AEntity.class.cpp.o"
   "/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/Bonus.class.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Entity/Bonus/Bonus.class.cpp.o"
   "/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/HealthPack.class.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Entity/Bonus/HealthPack.class.cpp.o"
   "/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/WeaponUpgrade.class.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Entity/Bonus/WeaponUpgrade.class.cpp.o"
   "/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Character.class.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.o"
+  "/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Basic.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Basic.cpp.o"
   "/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Boss.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Boss.cpp.o"
   "/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Creature.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Creature.cpp.o"
-  "/home/pelluro/Documents/Work/CppRush00/Game.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Game.cpp.o"
-  "/home/pelluro/Documents/Work/CppRush00/Header.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Header.cpp.o"
+  "/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Player.class.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Entity/Characters/Player.class.cpp.o"
+  "/home/pelluro/Documents/Work/CppRush00/Entity/Missiles/Missile.class.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Entity/Missiles/Missile.class.cpp.o"
+  "/home/pelluro/Documents/Work/CppRush00/Game.class.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Game.class.cpp.o"
   "/home/pelluro/Documents/Work/CppRush00/Map/Map.class.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Map/Map.class.cpp.o"
   "/home/pelluro/Documents/Work/CppRush00/Map/Square.class.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Map/Square.class.cpp.o"
-  "/home/pelluro/Documents/Work/CppRush00/Ncurses.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/Ncurses.cpp.o"
-  "/home/pelluro/Documents/Work/CppRush00/main.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/main.cpp.o"
+  "/home/pelluro/Documents/Work/CppRush00/mainmatthieu.cpp" "/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir/mainmatthieu.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

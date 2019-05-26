@@ -1,17 +1,27 @@
 #include "Creature.hpp"
-
-
+#include "../../../Constants.hpp"
+#include <ncurses.h>
 
 Creature::Creature( void ):
-Character("creature", "creature", 1, PLUS_Y, 1, NULL)
+ Character('@', "creature", 1, NULL)
 {
-
+	this->_x = WIDTH / 2;
+	this->_oldX = WIDTH / 2;
+	this->_y = 0;
+	this->_oldY = 0;
+	this->_speed = 1;
+	this->_direction = PLUS_Y;
 }
 
-Creature::Creature( std::string type, std::string name, int speed, int hp, Weapon * weapon ):
-Character(type, name, speed, PLUS_Y, hp, weapon)
+Creature::Creature( char type, std::string name, int speed, int direction, int hp, Weapon * weapon ):
+Character(type, name, hp, weapon)
 {
-
+	this->_x = WIDTH / 2;
+	this->_oldX = WIDTH / 2;
+	this->_y = 0;
+	this->_oldY = 0;
+	this->_speed = speed;
+	this->_direction = direction;
 }
 
 Creature::Creature( Creature const & src )
@@ -36,10 +46,22 @@ Creature const &		Creature::operator=( Creature const & rhs )
 
 void					Creature::hit( AEntity const & entity )
 {
-	if (entity.getType() == "player")
+	if (entity.getType() == 'X')
 	{
 		this->takeDamage(COLLISION_DAMAGE);
 	}
-	else if (entity.getType() == "missile")
+	else if (entity.getType() == '|')
 		this->takeDamage(entity.getDealDamage());
 }
+
+void    		Creature::move( void ){
+	AEntity::move();
+}
+void    		Creature::move( int dx, int dy  ){
+	AEntity::move(dx,dy);
+}
+bool			Creature::onMove( void ){
+	return AEntity::onMove();
+}
+
+

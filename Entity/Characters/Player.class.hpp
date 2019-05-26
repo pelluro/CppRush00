@@ -8,7 +8,6 @@
 
 #include "../AEntity.class.hpp"
 #include "Character.class.hpp"
-#include "../Weapons/Weapon.class.hpp"
 
 class Player:public Character
 {
@@ -20,7 +19,9 @@ class Player:public Character
     	Player const &		operator=( Player const & rhs );
 
         virtual void        hit( AEntity const & entity );
-        virtual void        move( void );
+		virtual void    		move( void );
+		virtual bool			onMove( void );
+		void        move( int dx, int dy);
 
     protected:
 

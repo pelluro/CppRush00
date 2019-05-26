@@ -2,7 +2,7 @@
 
 
 Boss::Boss( void ):
-Creature("boss", "Cthulu", 10000, 100, NULL)
+Creature('&', "Cthulu", 10000, PLUS_Y , 100, NULL)
 {
 	this->equipWeapon(new Gun);
 }
@@ -30,6 +30,16 @@ Boss const &		Boss::operator=( Boss const & rhs )
 Boss *		 			Boss::clone( void )
 {
 	return new Boss(*this);
+}
+
+void    		Boss::move( void ){
+	AEntity::move();
+}
+bool			Boss::onMove( void ){
+	return AEntity::onMove();
+}
+void    		Boss::move( int dx, int dy  ){
+	AEntity::move(dx,dy);
 }
 
 

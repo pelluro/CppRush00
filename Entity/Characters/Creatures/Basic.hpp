@@ -8,7 +8,6 @@
 
 #include "../../AEntity.class.hpp"
 #include "../Character.class.hpp"
-#include "../../Weapons/Weapon.class.hpp"
 #include "Creature.hpp"
 
 class Basic:public Creature
@@ -19,8 +18,11 @@ class Basic:public Creature
     	virtual ~Basic( void );
 
     	Basic const &		operator=( Basic const & rhs );
+		virtual void			move( int dx, int dy );
 
         virtual Basic * 			clone( void );
+		virtual void    		move( void );
+		virtual bool			onMove( void );
 
     protected:
 
