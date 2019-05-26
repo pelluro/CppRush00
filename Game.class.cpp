@@ -60,7 +60,7 @@ void Game::start()
 		o << i << "||" << this->getCount() << "||" << this->_player->getHP() << std::endl;
 		this->log(o.str());
 		this->iterate();
-		if(i == 60)
+		if(i == 6000)
 		{
 			i = 0;
 		}
@@ -68,7 +68,7 @@ void Game::start()
 			case 15:
 			{
 				AEntity* unit = new Basic();
-				unit->setX(20);
+				unit->setX((rand() % (WIDTH - 2) + 1));
 				unit->setY(2);
 				this->addEntity(unit);
 				break;
@@ -89,7 +89,10 @@ void Game::iterate()
 		if (!entity->toDelete())
 		{
 			if (entity->move())
+			{
+
 				this->_map->updateEntity(this->_winGame, entity);
+			}
 			if (entity->onAction())
 				entity->fire();
 		}
@@ -101,32 +104,11 @@ void Game::iterate()
 		entity = this->getEntity(i);
 		if (entity->toDelete())
 		{
-			this->_map->removeEntity(this->_winGame, entity->getX(), entity->getY());
 			this->removeEntity(i);
+			i--;
 		}
 		i++;
 	}
-//	for (int x = 0; x < WIDTH; x++)
-//	{
-//		for (int y = 0; y < HEIGHT; y++)
-//		{
-//			if(this->_map->getSquare(x,y)->hasEntity())
-//			{
-//				AEntity* entity = this->_map->getSquare(x,y)->getEntity();
-//				entity->move();
-//				if(entity->getDirection() != 0 && entity->getY() == HEIGHT - 1)
-//				{
-//					// creature reached the bottom
-//					this->_map->updateEntity(entity);
-//					this->_map->removeEntity(entity->getX(),entity->getY());
-//				}
-//				else
-//				{
-//					this->_map->updateEntity(entity);
-//				}
-//			}
-//		}
-//	}
 }
 
 bool Game::listen(void)
@@ -216,6 +198,8 @@ void		Game::removeEntity(int idx)
 	if (idx >= this->getCount() || idx < 0)
 		return ;
 
+	AEntity * to_delete = tmp[idx];
+
 	this->_entity = new AEntity*[this->getCount() - 1];
 
 	while (i < idx)
@@ -223,10 +207,14 @@ void		Game::removeEntity(int idx)
 		this->_entity[i] = tmp[i];
 		i++;
 	}
+	
+
 	while(++i < this->getCount())
 		this->_entity[i - 1] = tmp[i];
 	this->_count--;
 	delete tmp;
+	this->_map->removeEntity(this->_winGame, to_delete->getX(), to_delete->getY());
+	delete to_delete;
 }
 
 AEntity*	Game::getEntity(int idx) const

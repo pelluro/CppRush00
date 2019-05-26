@@ -12,8 +12,6 @@ Square::Square( Square const & src )
 
 Square::~Square( void )
 {
-	if(this->_entity != NULL)
-		delete this->_entity;
 }
 
 Square const &		Square::operator=( Square const & rhs )

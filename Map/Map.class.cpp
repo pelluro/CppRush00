@@ -54,6 +54,8 @@ void Map::addEntity(AEntity *entity)
 			AEntity * other = this->_tab[x][y]->getEntity();
 			entity->hit(*other);
 			other->hit(*entity);
+			entity->setX(entity->getOldX());
+			entity->setY(entity->getOldY());
 		}
 	}
 	else

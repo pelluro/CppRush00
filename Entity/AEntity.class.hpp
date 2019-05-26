@@ -39,16 +39,13 @@ class AEntity
 
 		AEntity const &		operator=( AEntity const & rhs );
 
-		//	if can move true else false
-		// virtual bool    onMove( void );
-
 		//	Actions
-		virtual void    hit( AEntity const & entity ) = 0;
+		virtual void    hit( AEntity const & entity );
 		virtual void	move( int dx, int dy );
 
-        //virtual AEntity *     clone( void ) = 0;
+//        virtual AEntity *     clone( void );
 
-        virtual int 	getDealDamage( void ) const = 0;
+        virtual int 	getDealDamage( void ) const;
 
 		//	Variables
 		void			setX( int x );

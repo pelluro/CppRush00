@@ -20,7 +20,8 @@ Character::Character( Character const & src )
 
 Character::~Character( void )
 {
-
+	if (this->_weapon)
+		delete this->_weapon;
 }
 
 

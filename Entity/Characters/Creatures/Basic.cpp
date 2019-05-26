@@ -2,7 +2,7 @@
 
 
 
-Basic::Basic( void ): Creature('^', "monster", 1000, PLUS_X , 1, NULL)
+Basic::Basic( void ): Creature('^', "monster", 400, PLUS_X , 1, NULL)
 {
 	this->equipWeapon(new Gun);
 }

@@ -56,6 +56,11 @@ AEntity::~AEntity( void )
 
 }
 
+//AEntity *     		AEntity::clone( void )
+//{
+//	return NULL;
+//}
+
 AEntity const &		AEntity::operator=( AEntity const & rhs )
 {
 	if (this != &rhs)
@@ -88,6 +93,16 @@ void				AEntity::move( int dx, int dy )
 	if(this->_y > HEIGHT - 1)
 		this->_y = HEIGHT - 1;
 	// If checkEntity true onHit() else tab[x][y] = &Aentity
+}
+
+void    AEntity::hit( AEntity const & entity )
+{
+	(void)entity;
+}
+
+int 	AEntity::getDealDamage( void ) const
+{
+	return (0);
 }
 
 void	AEntity::setX( int x )
