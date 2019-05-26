@@ -67,7 +67,7 @@ void Game::start()
 		o << i << "||" << this->getCount() << "||" << this->_player->getHP() << std::endl;
 		this->log(o.str());
 		this->iterate();
-		if(i == 30000)
+		if(i == 6000)
 		{
 			i = 0;
 		}
@@ -222,6 +222,7 @@ void		Game::removeEntity(int idx)
 		this->_entity[i - 1] = tmp[i];
 	this->_count--;
 	delete tmp;
+	this->_map->removeEntity(this->_winGame, to_delete->getOldX(), to_delete->getOldY());
 	this->_map->removeEntity(this->_winGame, to_delete->getX(), to_delete->getY());
 	delete to_delete;
 }

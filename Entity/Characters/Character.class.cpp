@@ -5,13 +5,14 @@
 Character::Character( void ): AEntity()
 {
 	this->setHP(10);
+	this->_weapon = NULL;
 }
 
 Character::Character( char type, std::string name, int hp, Weapon * weapon ):
 AEntity(name, type)
 {
 	this->setHP(hp);
-	this->equipWeapon(weapon);
+	this->_weapon = weapon;
 }
 Character::Character( Character const & src )
 {
@@ -20,8 +21,7 @@ Character::Character( Character const & src )
 
 Character::~Character( void )
 {
-	if (this->_weapon)
-		delete this->_weapon;
+	this->unequipWeapon();
 }
 
 
@@ -96,6 +96,7 @@ void					Character::unequipWeapon( void )
 {
 	if (this->getWeapon())
 		delete this->getWeapon();
+	this->_weapon = NULL;
 }
 
 Weapon*					Character::getWeapon( void ) const

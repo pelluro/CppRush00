@@ -37,6 +37,9 @@ srcfiles :=	main.cpp Entity/AEntity.class.cpp			\
 		Map/Square.class.cpp	\
 		Game.class.cpp \
 
+DEBUG	= ./debug_$(NAME)
+FAN		= -fsanitize=address,undefined -g
+
 NCURSE = -lncurses
 
 objects  := $(subst .cpp,.o, $(srcfiles))
@@ -47,6 +50,10 @@ all: $(NAME)
 
 $(NAME): $(objects)
 	$(CXX) $(CXXFLAGS) $(NCURSE) $(objects) -o $(NAME)
+	@echo "${_BLUE}$(NAME) generate${_END} ${_PURPLE}[!${_END}]"
+
+debug: $(objects)
+	$(CXX) $(FAN) $(CXXFLAGS) $(NCURSE) $(objects) -o $(DEBUG)
 	@echo "${_BLUE}$(NAME) generate${_END} ${_PURPLE}[!${_END}]"
 
 %.o: %.cpp
