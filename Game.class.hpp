@@ -25,17 +25,17 @@ public:
 	Game & operator = (const Game & src);
 
 
-	//int getTimer() const;
-	//int getScore() const;
+	int getTimer() const;
+	int getScore() const;
 	//void loop(void);
 	bool listen(void);
 	//void refreshBox(void);
 	//void refresh(int count);
 	//void refresh();
-	//void displayInfo(void);
+	void displayInfo(void);
 	void start(void);
 	void iterate(void);
-	//void gameOver(void);
+	void gameOver(void);
 	//void checkDeath(void); //de tout les entity
 
 	int addEntity(AEntity * entity);
@@ -54,8 +54,8 @@ private:
 	int		_count;
 	Map* _map;
 	Player * _player;
-	//int     _timer;
-	//int     _score;
+	int     _timer;
+	int     _score;
 	//clock_t _time;
 	static Game * _current_game;
 
