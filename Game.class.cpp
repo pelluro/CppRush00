@@ -60,7 +60,7 @@ void Game::start()
 		o << i << "||" << this->getCount() << "||" << this->_player->getHP() << std::endl;
 		this->log(o.str());
 		this->iterate();
-		if(i == 6000)
+		if(i == 60)
 		{
 			i = 0;
 		}
@@ -132,6 +132,9 @@ void Game::iterate()
 bool Game::listen(void)
 {
 	int ch = getch();
+
+	this->_player->wait();
+
 	switch (ch)
 	{
 		case KEY_LEFT:

@@ -19,5 +19,14 @@ class Gun : public Weapon
 
 };
 
+class Riffle : public Weapon
+{
+    public:
+        Riffle( void );
+        virtual ~Riffle( void );
+
+
+};
+
 #endif
 

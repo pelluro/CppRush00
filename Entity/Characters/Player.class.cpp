@@ -19,7 +19,7 @@ Player::Player( void ) : Character(){
 	this->_type = 'X';
 	this->_name = "Player";
 	this->_direction = LESS_Y;
-	this->equipWeapon(new Gun);
+	this->equipWeapon(new Riffle);
 }
 Player::Player( Player const & src ) : Character(src) {
 	this->_x = src._x;
@@ -38,6 +38,25 @@ Player const &Player::operator=( Player const & rhs ){
 	this->_type = rhs._type;
 	this->_name = rhs._name;
 	return *this;
+}
+
+void					Player::wait( void )
+{
+	if (this->_weapon)
+	{
+		this->_weapon->reload();
+	}
+}
+
+void          			Player::fire( void )
+{
+	if (!this->_weapon)
+		return ;
+	if (this->_weapon->getTurnBeforeAction() <= 0)
+	{
+		this->Character::fire();
+	}
+
 }
 
 void	Player::hit( AEntity const & entity ){

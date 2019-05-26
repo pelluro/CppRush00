@@ -44,11 +44,20 @@ void	Weapon::setActionFrequency( int frequency )
 	this->_turn_before_action = frequency;
 }
 
+int		Weapon::getTurnBeforeAction( void ) const
+{
+	return this->_turn_before_action;
+}
+
+void	Weapon::reload( void )
+{
+	--this->_turn_before_action;
+}
+
 bool    Weapon::onAction( void )
 {
 	if (--this->_turn_before_action <= 0 )
 	{
-		this->_turn_before_action = this->_action_frequency;
 		return true;
 	}
 	return false;
@@ -56,5 +65,6 @@ bool    Weapon::onAction( void )
 
 Missile *	Weapon::fire( void )
 {
+	this->_turn_before_action = this->_action_frequency;
 	return this->m.clone();
 }

@@ -11,3 +11,12 @@ Gun::~Gun( void )
 
 }
 
+Riffle::Riffle( void ):Weapon(800)
+{
+	this->m.setSpeed(50);
+}
+
+Riffle::~Riffle( void )
+{
+
+}

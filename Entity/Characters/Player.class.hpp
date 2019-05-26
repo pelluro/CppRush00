@@ -18,6 +18,10 @@ class Player:public Character
 
     	Player const &		operator=( Player const & rhs );
 
+        virtual void          fire( void );
+
+        void                    wait( void );
+
         virtual void            hit( AEntity const & entity );
 		virtual bool    		move( void );
 		virtual bool			onMove( void );

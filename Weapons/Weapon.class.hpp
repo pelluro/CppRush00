@@ -29,7 +29,9 @@ class Weapon
 
         void                    setActionFrequency( int frequency );
 
+        void                    reload( void );
 
+        int                     getTurnBeforeAction( void ) const;
 
     protected:
         int     _action_frequency;
