@@ -41,7 +41,7 @@ Square*  const &	Map::getSquare( int x, int y ) const
 	return this->_tab[x][y];
 }
 
-void Map::addEntity(AEntity *entity)
+void Map::addEntity(WINDOW *w, AEntity *entity)
 {
 	int x = entity->getX();
 	int y = entity->getY();
@@ -55,6 +55,8 @@ void Map::addEntity(AEntity *entity)
 			entity->hit(*other);
 			other->hit(*entity);
 		}
+		wmove(w, y, x);
+		waddch(w, entity->getType());
 	}
 	else
 	{
@@ -62,14 +64,16 @@ void Map::addEntity(AEntity *entity)
 	}
 }
 
-void Map::updateEntity(AEntity *entity)
+void Map::updateEntity(WINDOW *w, AEntity *entity)
 {
-	this->removeEntity(entity->getOldX(), entity->getOldY());
-	this->addEntity(entity);
+	this->removeEntity(w, entity->getOldX(), entity->getOldY());
+	this->addEntity(w, entity);
 }
 
-void Map::removeEntity(int x, int y)
+void Map::removeEntity(WINDOW *w, int x, int y)
 {
+	wmove(w, y, x);
+	waddch(w, ' ');
 	this->_tab[x][y]->setEntity(NULL);
 }
 

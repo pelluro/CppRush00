@@ -49,8 +49,8 @@ Game::~Game()
 
 void Game::start()
 {
-	this->_map->addEntity(this->_player);
 	this->_map->print(this->_winGame);
+	this->_map->addEntity(this->_winGame, this->_player);
 	nodelay(stdscr,true);
 	int i = 0;
 	AEntity* unit = new Basic();
@@ -89,42 +89,36 @@ void Game::iterate()
 	{
 		entity = this->getEntity(i);
 		entity->move();
-		this->_map->updateEntity(entity);
+		this->_map->updateEntity(this->_winGame, entity);
 		if (entity->onAction())
 			entity->fire();
 		if (entity->toDelete())
-			this->removeEntity(i);
-		i++;
-	}
-	for (int x = 0; x < WIDTH; x++)
-	{
-		for (int y = 0; y < HEIGHT; y++)
 		{
-			if(this->_map->getSquare(x,y)->hasEntity())
-			{
-				AEntity* entity = this->_map->getSquare(x,y)->getEntity();
-				entity->move();
-				if(entity->getDirection() != 0 && entity->getY() == HEIGHT - 1)
-				{
-					// creature reached the bottom
-					this->_map->updateEntity(entity);
-//					this->_map->removeEntity(entity->getX(),entity->getY());
-				}
-				else if ((entity->getDirection() == LESS_Y || entity->getDirection() == LESS_X ||
-				 entity->getDirection() == PLUS_X || entity->getDirection() == PLUS_Y ||
-					entity->getDirection() == LESS_X_PLUS_Y || entity->getDirection() == PLUS_X_LESS_Y ||
-					entity->getDirection() == PLUS_X_PLUS_Y) && entity->getY() == -1)
-				{
-//					this->_map->updateEntity(entity);
-					this->_map->removeEntity(entity->getX(),entity->getY());
-				}
-				else
-				{
-					this->_map->updateEntity(entity);
-				}
-
-			}
+			this->_map->removeEntity(this->_winGame, entity->getX(),entity->getY());
+			this->removeEntity(i);
 		}
+		else if ((entity->getDirection() == PLUS_Y || 
+				entity->getDirection() == PLUS_X_PLUS_Y || 
+				entity->getDirection() == LESS_X_PLUS_Y) && entity->getY() == HEIGHT - 1)
+			{
+				// creature or missile reached the bottom
+				this->_map->updateEntity(this->_winGame, entity);
+				this->_map->removeEntity(this->_winGame, entity->getX(),entity->getY());
+			}
+		else if ((entity->getDirection() == LESS_Y || 
+			entity->getDirection() == PLUS_X_LESS_Y || 
+			entity->getDirection() == LESS_X_LESS_Y )&& entity->getY() == 0)
+		{
+			// missile or creature reached the top
+			this->_map->updateEntity(this->_winGame, entity);
+			this->_map->removeEntity(this->_winGame, entity->getX(),entity->getY());
+		}
+		else
+		{
+			this->_map->updateEntity(this->_winGame, entity);
+		}
+
+		i++;
 	}
 }
 
@@ -135,19 +129,19 @@ bool Game::listen(void)
 	{
 		case KEY_LEFT:
 			this->_player->move(-1,0);
-			this->_map->updateEntity(this->_player);
+			this->_map->updateEntity(this->_winGame, this->_player);
 			break;
 		case KEY_RIGHT:
 			this->_player->move(1,0);
-			this->_map->updateEntity(this->_player);
+			this->_map->updateEntity(this->_winGame, this->_player);
 			break;
 		case KEY_UP:
 			this->_player->move(0,-1);
-			this->_map->updateEntity(this->_player);
+			this->_map->updateEntity(this->_winGame, this->_player);
 			break;
 		case KEY_DOWN:
 			this->_player->move(0,1);
-			this->_map->updateEntity(this->_player);
+			this->_map->updateEntity(this->_winGame, this->_player);
 			break;
 		case KEY_HOME:
 			nodelay(stdscr,false);
