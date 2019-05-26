@@ -55,13 +55,13 @@ void					Creature::hit( AEntity const & entity )
 }
 
 void    		Creature::move( void ){
-	AEntity::move();
+	this->AEntity::move();
 }
 void    		Creature::move( int dx, int dy  ){
-	AEntity::move(dx,dy);
+	this->AEntity::move(dx,dy);
 }
 bool			Creature::onMove( void ){
-	return AEntity::onMove();
+	return this->AEntity::onMove();
 }
 
 

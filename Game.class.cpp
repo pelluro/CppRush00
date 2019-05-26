@@ -6,12 +6,17 @@
 #include "Game.class.hpp"
 #include "Entity/Characters/Creatures/Basic.hpp"
 
+Game * Game::_current_game = NULL;
+
 Game::Game()
 {
+	this->_current_game = this;
 	this->_winGame = newwin(HEIGHT, WIDTH, 0, 0);
 	this->_winInfo = newwin(8, WIDTH, HEIGHT + 1, 0);
 	this->_map = new Map();
 	this->_player = new Player();
+	this->_count = 0;
+	this->_entity = NULL;
 }
 
 Game::Game(const Game & src)
@@ -48,19 +53,28 @@ void Game::start()
 	this->_map->print(this->_winGame);
 	nodelay(stdscr,true);
 	int i = 0;
+	AEntity* unit = new Basic();
+	unit->setX(20);
+	unit->setY(2);
+	this->addEntity(unit);
 	while(listen()){
 		std::stringstream o;
-		o << i << std::endl;
+		o << i << "||" << this->getCount() << "||" << this->_player->getHP() << std::endl;
 		this->log(o.str());
 		this->iterate();
-		if(i == 60)
+		if(i == 6000)
 		{
 			i = 0;
 		}
 		switch(i++){
 			case 15:
-				this->_map->addEntity(new Basic());
+			{
+//				AEntity* unit = new Basic();
+//				unit->setX(20);
+//				unit->setY(2);
+//				this->addEntity(unit);
 				break;
+			}
 		}
 		this->_map->print(this->_winGame);
 	}
@@ -68,27 +82,41 @@ void Game::start()
 
 void Game::iterate()
 {
-	for (int x = 0; x < WIDTH; x++)
+	int i = 0;
+	AEntity* entity;
+
+	while (i < this->getCount())
 	{
-		for (int y = 0; y < HEIGHT; y++)
-		{
-			if(this->_map->getSquare(x,y)->hasEntity())
-			{
-				AEntity* entity = this->_map->getSquare(x,y)->getEntity();
-				entity->move();
-				if(entity->getDirection() != 0 && entity->getY() == HEIGHT - 1)
-				{
-					// creature reached the bottom
-					this->_map->updateEntity(entity);
-					this->_map->removeEntity(entity->getX(),entity->getY());
-				}
-				else
-				{
-					this->_map->updateEntity(entity);
-				}
-			}
-		}
+		entity = this->getEntity(i);
+		entity->move();
+		this->_map->updateEntity(entity);
+		if (entity->onAction())
+			entity->fire();
+		if (entity->toDelete())
+			this->removeEntity(i);
+		i++;
 	}
+//	for (int x = 0; x < WIDTH; x++)
+//	{
+//		for (int y = 0; y < HEIGHT; y++)
+//		{
+//			if(this->_map->getSquare(x,y)->hasEntity())
+//			{
+//				AEntity* entity = this->_map->getSquare(x,y)->getEntity();
+//				entity->move();
+//				if(entity->getDirection() != 0 && entity->getY() == HEIGHT - 1)
+//				{
+//					// creature reached the bottom
+//					this->_map->updateEntity(entity);
+//					this->_map->removeEntity(entity->getX(),entity->getY());
+//				}
+//				else
+//				{
+//					this->_map->updateEntity(entity);
+//				}
+//			}
+//		}
+//	}
 }
 
 bool Game::listen(void)
@@ -121,7 +149,7 @@ bool Game::listen(void)
 			return (false);
 		case 32:
 		{
-			//fire
+			this->_player->fire();
 		}
 		default:
 			break;
@@ -165,7 +193,8 @@ int		Game::addEntity(AEntity * entity)
 		i++;
 	}
 	this->_entity[i] = entity;
-	delete tmp;
+	if (tmp)
+		delete tmp;
 	return (++this->_count);
 }
 
@@ -186,6 +215,7 @@ void		Game::removeEntity(int idx)
 	}
 	while(++i < this->getCount())
 		this->_entity[i - 1] = tmp[i];
+	this->_count--;
 	delete tmp;
 }
 
@@ -201,3 +231,7 @@ int			Game::getCount( void ) const
 	return this->_count;
 }
 
+Game * 		Game::getGame( void )
+{
+	return Game::_current_game;
+}

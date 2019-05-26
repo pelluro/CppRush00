@@ -2,9 +2,16 @@
 
 
 Missile::Missile( void ):
-AEntity("missile", '|')
+AEntity("missile", '|', 50, 0)
 {
 	this->_deal_damage = 1;
+	this->_is_destroy = false;
+}
+
+Missile::Missile( int damage, int speed ):
+AEntity("missile", '|', speed, 0)
+{
+	this->_deal_damage = damage;
 	this->_is_destroy = false;
 }
 
@@ -29,10 +36,30 @@ Missile const &	Missile::operator=( Missile const & rhs )
 {
 	if (this != &rhs)
 	{
-		AEntity::operator=(rhs);
+		this->AEntity::operator=(rhs);
 		this->_deal_damage = rhs.getDealDamage();
+		this->_is_destroy = false;
 	}
 	return *this;
+}
+
+bool        Missile::onAction( void )
+{
+	return false;
+}
+
+void        Missile::fire( void )
+{
+
+}
+
+bool		Missile::toDelete( void )
+{
+	if (this->AEntity::toDelete())
+		return true;
+	if (this->_is_destroy)
+		return true;
+	return false;
 }
 
 void	Missile::hit( const AEntity &s )

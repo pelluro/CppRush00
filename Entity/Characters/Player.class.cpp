@@ -9,6 +9,8 @@
 #include "../AEntity.class.hpp"
 #include "Player.class.hpp"
 
+#include "../../Weapons/Gun.hpp"
+
 Player::Player( void ) : Character(){
 	this->_x = WIDTH / 2;
 	this->_y = HEIGHT - 1;
@@ -16,6 +18,8 @@ Player::Player( void ) : Character(){
 	this->_oldY = this->_y;
 	this->_type = 'X';
 	this->_name = "Player";
+	this->_direction = LESS_Y;
+	this->equipWeapon(new Gun);
 }
 Player::Player( Player const & src ) : Character(src) {
 	this->_x = src._x;
@@ -37,7 +41,8 @@ Player const &Player::operator=( Player const & rhs ){
 }
 
 void	Player::hit( AEntity const & entity ){
-	entity.getX();
+	if (entity.getDealDamage())
+		this->setHP(this->getHP() - entity.getDealDamage());
 }
 
 void	Player::move( void ){
@@ -46,10 +51,10 @@ void	Player::move( void ){
 
 void Player::move(int x, int y)
 {
-	AEntity::move(x, y);
+	this->AEntity::move(x, y);
 }
 
 bool			Player::onMove( void )
 {
-	return  AEntity::onMove();
+	return  this->AEntity::onMove();
 }

@@ -11,13 +11,11 @@ class Missile : public AEntity
 {
     public:
     	Missile( void );
+        Missile( int damage, int speed );
     	Missile( int damage, int direction, int speed );
 		Missile( Missile const & src );
 
 		virtual ~Missile( void );
-
-//		virtual void    		move( void );
-//		virtual bool			onMove( void );
 
 		Missile const &		operator=( Missile const & rhs );
 
@@ -25,6 +23,11 @@ class Missile : public AEntity
 
 		virtual Missile *	clone( void );
 		virtual Missile *	clone( int direction );
+
+        virtual bool        onAction( void );
+        virtual void        fire( void );
+
+        virtual bool        toDelete( void );
 
 		virtual int			getDealDamage( void ) const;
 

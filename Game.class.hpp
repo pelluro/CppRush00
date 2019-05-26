@@ -13,6 +13,8 @@
 #include <ctime>
 
 
+class Player;
+
 class Game
 {
 
@@ -43,6 +45,8 @@ public:
 
 	void log(std::string);
 
+	static Game * getGame( void );
+
 private:
 	AEntity   **_entity;
 	WINDOW  *_winInfo;
@@ -53,6 +57,7 @@ private:
 	//int     _timer;
 	//int     _score;
 	//clock_t _time;
+	static Game * _current_game;
 
 };
 

@@ -31,6 +31,7 @@ class AEntity
 	public:
 		AEntity( void );
 		AEntity( std::string name, char type );
+		AEntity( std::string name, char type, int speed);
 		AEntity( std::string name, char type, int speed, int direction );
 		AEntity( char type );
 		AEntity( AEntity const & src );
@@ -43,7 +44,7 @@ class AEntity
 
 		//	Actions
 		virtual void    hit( AEntity const & entity ) = 0;
-		virtual void			move( int dx, int dy );
+		virtual void	move( int dx, int dy );
 
         //virtual AEntity *     clone( void ) = 0;
 
@@ -63,10 +64,18 @@ class AEntity
 		char			getType(void) const;
 		void			setType( char type);
 
-		virtual void    		move( void );
-		virtual bool			onMove( void );
+		virtual void    move( void );
+		virtual void    forceMove( void );
+		virtual bool	onMove( void );
+
+		virtual bool	toDelete( void );
+
+		virtual void	fire( void ) = 0;
+		virtual bool	onAction( void ) = 0;
+
 		void            setSpeed( int frequency );
 		void            addSpeed( int frequency );
+		int             getSpeed( void ) const;
 
 		void            setDirection( int direction );
 		int             getDirection( void ) const;

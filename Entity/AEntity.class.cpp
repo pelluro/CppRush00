@@ -28,7 +28,13 @@ _x(0), _y(0), _oldX(0), _oldY(0), _speed(1), _turn_before_move(1), _direction(),
 
 }
 
-AEntity::AEntity( std::string name, char type,int speed, int direction  ):
+AEntity::AEntity( std::string name, char type, int speed):
+_x(0), _y(0), _oldX(0), _oldY(0), _speed(speed), _turn_before_move(speed), _direction(), _name(name), _type(type)
+{
+
+}
+
+AEntity::AEntity( std::string name, char type, int speed, int direction  ):
  _x(0), _y(0), _oldX(0), _oldY(0), _speed(speed), _turn_before_move(speed), _direction(direction), _name(name), _type(type)
 {
 
@@ -58,6 +64,10 @@ AEntity const &		AEntity::operator=( AEntity const & rhs )
 		this->_y = rhs._y;
 		this->_oldX = rhs._oldX;
 		this->_oldY = rhs._oldY;
+		this->_type = rhs._type;
+		this->_speed = rhs._speed;
+		this->_turn_before_move = rhs._turn_before_move;
+		this->_direction = rhs._direction;
 		this->_type = rhs._type;
 	}
 	return (*this);
@@ -155,6 +165,25 @@ void            	AEntity::move( void )
 	}
 }
 
+void            	AEntity::forceMove( void )
+{
+	if (this->_direction == LESS_Y)
+		this->move(0, -1);
+	else if (this->_direction == PLUS_Y)
+		this->move(1, 0);
+	else if (this->_direction == LESS_X)
+		this->move(-1, 0);
+	else if (this->_direction == PLUS_X)
+		this->move(0, 1);
+	else if (this->_direction == LESS_X_LESS_Y)
+		this->move(-1, -1);
+	else if (this->_direction == LESS_X_PLUS_Y)
+		this->move(-1, 1);
+	else if (this->_direction == PLUS_X_LESS_Y)
+		this->move(1, -1);
+	else if (this->_direction == PLUS_X_PLUS_Y)
+		this->move(1, 1);
+}
 
 bool AEntity::onMove( void )
 {
@@ -163,6 +192,14 @@ bool AEntity::onMove( void )
 		this->_turn_before_move = this->_speed;
 		return true;
 	}
+	return false;
+}
+
+bool				AEntity::toDelete( void )
+{
+	if (this->getX() <= 0 || this->getX() >= WIDTH - 1
+		|| this->getY() <= 0 || this->getY() >= HEIGHT - 1)
+		return true;
 	return false;
 }
 
@@ -175,6 +212,11 @@ void				AEntity::setSpeed( int frequency )
 void				AEntity::addSpeed( int frequency )
 {
 	this->_speed += frequency;
+}
+
+int             	AEntity::getSpeed( void ) const
+{
+	return this->_speed;
 }
 
 void            	AEntity::setDirection( int direction )

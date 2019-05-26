@@ -25,6 +25,8 @@ class Weapon
 
         bool                    onAction( void );
 
+        Missile *               fire( void );
+
         void                    setActionFrequency( int frequency );
 
 

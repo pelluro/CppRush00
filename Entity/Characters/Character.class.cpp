@@ -1,5 +1,5 @@
 #include "Character.class.hpp"
-
+#include "../../Game.class.hpp"
 
 
 Character::Character( void ): AEntity()
@@ -28,7 +28,7 @@ Character const &		Character::operator=( Character const & rhs )
 {
 	if (this != &rhs)
 	{
-		AEntity::operator=( rhs );
+		this->AEntity::operator=( rhs );
 		this->setHP(rhs.getHP());
 		this->equipWeapon(rhs.getWeapon()->clone());
 	}
@@ -37,9 +37,30 @@ Character const &		Character::operator=( Character const & rhs )
 
 void          			Character::fire( void )
 {
-
+	Game * game = Game::getGame();
+	Missile * missile = this->_weapon->fire();
+	missile->setDirection(this->getDirection());
+	missile->setY(this->getY());
+	missile->setX(this->getX());
+	missile->forceMove();
+	game->addEntity(missile);
 }
 
+bool 			        Character::onAction( void )
+{
+	if (this->_weapon)
+		return this->_weapon->onAction();
+	return false;
+}
+
+bool					Character::toDelete( void )
+{
+	if (this->AEntity::toDelete())
+		return true;
+	if (this->getHP() <= 0)
+		return true;
+	return false;
+}
 
 int						Character::getHP( void ) const
 {

@@ -54,3 +54,7 @@ bool    Weapon::onAction( void )
 	return false;
 }
 
+Missile *	Weapon::fire( void )
+{
+	return this->m.clone();
+}

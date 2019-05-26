@@ -51,7 +51,9 @@ void Map::addEntity(AEntity *entity)
 			this->_tab[x][y]->setEntity(entity);
 		else
 		{
-			// Une entite a essaye d etre ajoute sur la carte ou une autre se trouve deja
+			AEntity * other = this->_tab[x][y]->getEntity();
+			entity->hit(*other);
+			other->hit(*entity);
 		}
 	}
 	else

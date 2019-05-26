@@ -33,13 +33,13 @@ Boss *		 			Boss::clone( void )
 }
 
 void    		Boss::move( void ){
-	AEntity::move();
+	this->AEntity::move();
 }
 bool			Boss::onMove( void ){
-	return AEntity::onMove();
+	return this->AEntity::onMove();
 }
 void    		Boss::move( int dx, int dy  ){
-	AEntity::move(dx,dy);
+	this->AEntity::move(dx,dy);
 }
 
 

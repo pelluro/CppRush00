@@ -4,7 +4,7 @@
 
 Basic::Basic( void ): Creature('^', "monster", 1000, PLUS_X , 1, NULL)
 {
-	
+//	this->equipWeapon(new Gun);
 }
 
 Basic::Basic( Basic const & src )
@@ -33,11 +33,11 @@ Basic *		 			Basic::clone( void )
 }
 
 void    		Basic::move( void ){
-	AEntity::move();
+	this->AEntity::move();
 }
 void    		Basic::move( int dx, int dy  ){
-	AEntity::move(dx,dy);
+	this->AEntity::move(dx,dy);
 }
 bool			Basic::onMove( void ){
-	return AEntity::onMove();
+	return this->AEntity::onMove();
 }

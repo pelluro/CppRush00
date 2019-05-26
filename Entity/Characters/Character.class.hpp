@@ -33,9 +33,13 @@ class Character: public AEntity
 
         virtual int           getDealDamage( void ) const;
 
+        virtual bool          onAction( void );
+        virtual bool          toDelete( void );
+
         void                  equipWeapon( Weapon* weapon );
         void                  unequipWeapon( void );
         Weapon*               getWeapon( void ) const;
+
 
     protected:
     //health point

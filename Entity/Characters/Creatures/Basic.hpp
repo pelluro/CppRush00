@@ -9,6 +9,9 @@
 #include "../../AEntity.class.hpp"
 #include "../Character.class.hpp"
 #include "Creature.hpp"
+#include "../../../Weapons/Gun.hpp"
+
+class Gun;
 
 class Basic:public Creature
 {
