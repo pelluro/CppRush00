@@ -49,7 +49,7 @@ void Map::addEntity(AEntity *entity)
 	{
 		if (!this->_tab[x][y]->hasEntity())
 			this->_tab[x][y]->setEntity(entity);
-		else
+		else if (this->_tab[x][y]->getEntity() != entity)
 		{
 			AEntity * other = this->_tab[x][y]->getEntity();
 			entity->hit(*other);

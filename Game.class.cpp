@@ -136,19 +136,15 @@ bool Game::listen(void)
 	{
 		case KEY_LEFT:
 			this->_player->move(-1,0);
-			this->_map->updateEntity(this->_winGame, this->_player);
 			break;
 		case KEY_RIGHT:
 			this->_player->move(1,0);
-			this->_map->updateEntity(this->_winGame, this->_player);
 			break;
 		case KEY_UP:
 			this->_player->move(0,-1);
-			this->_map->updateEntity(this->_winGame, this->_player);
 			break;
 		case KEY_DOWN:
 			this->_player->move(0,1);
-			this->_map->updateEntity(this->_winGame, this->_player);
 			break;
 		case KEY_HOME:
 			nodelay(stdscr,false);
@@ -164,6 +160,7 @@ bool Game::listen(void)
 		default:
 			break;
 	}
+	this->_map->updateEntity(this->_winGame, this->_player);
 	return (true);
 }
 
