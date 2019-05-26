@@ -22,8 +22,8 @@ public:
 	AEntity *		getEntity( int x, int y ) const;
 	//void			setEntity( int y, int x, AEntity * entity );
 	void			addEntity(AEntity* entity);
-	void			updateEntity(AEntity* entity);
-	void			removeEntity( int x, int y );
+	void			updateEntity(WINDOW * w,AEntity* entity);
+	void			removeEntity(WINDOW * w, int x, int y );
 
 	void 			print(WINDOW * w);
 	std::string		toString();

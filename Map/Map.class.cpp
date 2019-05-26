@@ -62,15 +62,21 @@ void Map::addEntity(AEntity *entity)
 	}
 }
 
-void Map::updateEntity(AEntity *entity)
+void Map::updateEntity(WINDOW * w, AEntity *entity)
 {
-	this->removeEntity(entity->getOldX(), entity->getOldY());
-	this->addEntity(entity);
+	if (entity->getOldX() != entity->getX() || entity->getOldY() !=entity->getY())
+	{
+		this->removeEntity(w, entity->getOldX(), entity->getOldY());
+		this->addEntity(entity);		
+	}
+
 }
 
-void Map::removeEntity(int x, int y)
+void Map::removeEntity(WINDOW *w, int x, int y)
 {
 	this->_tab[x][y]->setEntity(NULL);
+	wmove(w, y, x);
+	waddch(w, ' ');
 }
 
 void Map::print(WINDOW *w)
@@ -91,13 +97,10 @@ void Map::print(WINDOW *w)
 			if(s->hasEntity())
 			{
 				AEntity* entity = s->getEntity();
-				wmove(w, entity->getOldY(), entity->getOldX());
-				waddch(w, ' ');
-				wmove(w, entity->getY(), entity->getX());
+				wmove(w, y, x);
 				waddch(w, entity->getType());
 			}
 			s = NULL;
-			delete s;
 		}
 	}
 

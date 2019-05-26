@@ -54,10 +54,7 @@ void Game::start()
 	this->_map->print(this->_winGame);
 	nodelay(stdscr,true);
 	int i = 0;
-	AEntity* unit = new Basic();
-	unit->setX(20);
-	unit->setY(2);
-	this->addEntity(unit);
+
 	while(listen()){
 		std::stringstream o;
 		o << i << "||" << this->getCount() << "||" << this->_player->getHP() << std::endl;
@@ -70,10 +67,10 @@ void Game::start()
 		switch(i++){
 			case 15:
 			{
-//				AEntity* unit = new Basic();
-//				unit->setX(20);
-//				unit->setY(2);
-//				this->addEntity(unit);
+				AEntity* unit = new Basic();
+				unit->setX(20);
+				unit->setY(2);
+				this->addEntity(unit);
 				break;
 			}
 		}
@@ -89,10 +86,13 @@ void Game::iterate()
 	while (i < this->getCount())
 	{
 		entity = this->getEntity(i);
-		if (entity->move())
-			this->_map->updateEntity(entity);
-		if (entity->onAction())
-			entity->fire();
+		if (!entity->toDelete())
+		{
+			if (entity->move())
+				this->_map->updateEntity(this->_winGame, entity);
+			if (entity->onAction())
+				entity->fire();
+		}
 		i++;
 	}
 	i = 0;
@@ -100,7 +100,10 @@ void Game::iterate()
 	{
 		entity = this->getEntity(i);
 		if (entity->toDelete())
+		{
+			this->_map->removeEntity(this->_winGame, entity->getX(), entity->getY());
 			this->removeEntity(i);
+		}
 		i++;
 	}
 //	for (int x = 0; x < WIDTH; x++)
@@ -133,19 +136,19 @@ bool Game::listen(void)
 	{
 		case KEY_LEFT:
 			this->_player->move(-1,0);
-			this->_map->updateEntity(this->_player);
+			this->_map->updateEntity(this->_winGame, this->_player);
 			break;
 		case KEY_RIGHT:
 			this->_player->move(1,0);
-			this->_map->updateEntity(this->_player);
+			this->_map->updateEntity(this->_winGame, this->_player);
 			break;
 		case KEY_UP:
 			this->_player->move(0,-1);
-			this->_map->updateEntity(this->_player);
+			this->_map->updateEntity(this->_winGame, this->_player);
 			break;
 		case KEY_DOWN:
 			this->_player->move(0,1);
-			this->_map->updateEntity(this->_player);
+			this->_map->updateEntity(this->_winGame, this->_player);
 			break;
 		case KEY_HOME:
 			nodelay(stdscr,false);
@@ -242,3 +245,4 @@ Game * 		Game::getGame( void )
 {
 	return Game::_current_game;
 }
+
