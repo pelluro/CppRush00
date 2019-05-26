@@ -18,6 +18,8 @@ Game::Game()
 	this->_count = 0;
 	this->_entity = NULL;
 	this->_current_game = this;
+	this->_timer = 0;
+	this->_score = 0;
 }
 
 Game::Game(const Game & src)
@@ -28,6 +30,9 @@ Game::Game(const Game & src)
 	this->_player = src._player;
 	this->_entity = src._entity;
 	this->_count = src._count;
+	this->_timer = src._timer;
+	this->_score = src._score;
+
 }
 
 Game &Game::operator = (const Game & src){
@@ -37,6 +42,8 @@ Game &Game::operator = (const Game & src){
 	this->_player = src._player;
 	this->_entity = src._entity;
 	this->_count = src._count;
+	this->_timer = src._timer;
+	this->_score = src._score;
 	return *this;
 }
 
@@ -60,7 +67,7 @@ void Game::start()
 		o << i << "||" << this->getCount() << "||" << this->_player->getHP() << std::endl;
 		this->log(o.str());
 		this->iterate();
-		if(i == 6000)
+		if(i == 30000)
 		{
 			i = 0;
 		}
@@ -68,13 +75,15 @@ void Game::start()
 			case 15:
 			{
 				AEntity* unit = new Basic();
-				unit->setX((rand() % (WIDTH - 2) + 1));
-				unit->setY(2);
+				unit->setX(rand() % WIDTH - 2 );
+				unit->setY(1);
 				this->addEntity(unit);
 				break;
 			}
 		}
 		this->_map->print(this->_winGame);
+		this->_score++;
+		this->displayInfo();
 	}
 }
 
@@ -105,9 +114,9 @@ void Game::iterate()
 		if (entity->toDelete())
 		{
 			this->removeEntity(i);
-			i--;
 		}
-		i++;
+		else
+			i++;
 	}
 }
 
@@ -234,3 +243,21 @@ Game * 		Game::getGame( void )
 	return Game::_current_game;
 }
 
+
+int Game::getScore(void) const
+{
+	return this->_score;
+}
+
+int Game::getTimer(void) const
+{
+	return this->_timer;
+}
+
+void	Game::displayInfo(void)
+{
+	std::string info = "HP: " + std::to_string(this->_player->getHP()) + " lives" ;
+	mvwprintw(this->_winInfo, 2, 1, info.c_str());
+	info = "Score: " + std::to_string(this->getScore() / 1000);
+	mvwprintw(this->_winInfo, 4, 1, info.c_str());
+}

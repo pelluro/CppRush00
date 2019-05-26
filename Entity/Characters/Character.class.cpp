@@ -4,7 +4,7 @@
 
 Character::Character( void ): AEntity()
 {
-	this->setHP(1);
+	this->setHP(10);
 }
 
 Character::Character( char type, std::string name, int hp, Weapon * weapon ):

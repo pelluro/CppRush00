@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Users/mipham/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -E remove -f
+RM = /Users/mipham/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pelluro/Documents/Work/CppRush00
+CMAKE_SOURCE_DIR = /Users/mipham/Documents/PiscineCpp/cppRush
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pelluro/Documents/Work/CppRush00/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/pelluro/Documents/Work/CppRush00/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Users/mipham/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Users/mipham/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles /home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/CMakeFiles /Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -501,32 +501,32 @@ Weapons/Weapon.class.cpp.s:
 	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Weapons/Weapon.class.cpp.s
 .PHONY : Weapons/Weapon.class.cpp.s
 
-mainmatthieu.o: mainmatthieu.cpp.o
+main.o: main.cpp.o
 
-.PHONY : mainmatthieu.o
+.PHONY : main.o
 
 # target to build an object file
-mainmatthieu.cpp.o:
-	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/mainmatthieu.cpp.o
-.PHONY : mainmatthieu.cpp.o
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-mainmatthieu.i: mainmatthieu.cpp.i
+main.i: main.cpp.i
 
-.PHONY : mainmatthieu.i
+.PHONY : main.i
 
 # target to preprocess a source file
-mainmatthieu.cpp.i:
-	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/mainmatthieu.cpp.i
-.PHONY : mainmatthieu.cpp.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-mainmatthieu.s: mainmatthieu.cpp.s
+main.s: main.cpp.s
 
-.PHONY : mainmatthieu.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-mainmatthieu.cpp.s:
-	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/mainmatthieu.cpp.s
-.PHONY : mainmatthieu.cpp.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -535,8 +535,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... CppRush00"
 	@echo "... edit_cache"
+	@echo "... CppRush00"
 	@echo "... Entity/AEntity.class.o"
 	@echo "... Entity/AEntity.class.i"
 	@echo "... Entity/AEntity.class.s"
@@ -579,9 +579,9 @@ help:
 	@echo "... Weapons/Weapon.class.o"
 	@echo "... Weapons/Weapon.class.i"
 	@echo "... Weapons/Weapon.class.s"
-	@echo "... mainmatthieu.o"
-	@echo "... mainmatthieu.i"
-	@echo "... mainmatthieu.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

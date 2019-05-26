@@ -8,173 +8,171 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/pelluro/Documents/Work/CppRush00/cmake-build-debug"/>
+				<Option working_dir="/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/pelluro/Documents/Work/CppRush00/cmake-build-debug"/>
+				<Option working_dir="/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="CppRush00">
-				<Option output="/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/libCppRush00.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/pelluro/Documents/Work/CppRush00/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 CppRush00"/>
-					<CompileFile command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="CppRush00/fast">
-				<Option output="/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/libCppRush00.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/pelluro/Documents/Work/CppRush00/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
-					<Add directory="/usr/include/c++/8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 CppRush00/fast"/>
-					<CompileFile command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/pelluro/Documents/Work/CppRush00/cmake-build-debug"/>
+				<Option working_dir="/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/make -j8 -f &quot;/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CppRush00">
+				<Option output="/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/libCppRush00.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 CppRush00"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CppRush00/fast">
+				<Option output="/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/libCppRush00.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 CppRush00/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mipham/Documents/PiscineCpp/cppRush/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Constants.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Constants.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/AEntity.class.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/AEntity.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/AEntity.class.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/AEntity.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/Bonus.class.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Bonus/Bonus.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/Bonus.class.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Bonus/Bonus.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/HealthPack.class.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Bonus/HealthPack.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/HealthPack.class.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Bonus/HealthPack.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/WeaponUpgrade.class.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Bonus/WeaponUpgrade.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Bonus/WeaponUpgrade.class.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Bonus/WeaponUpgrade.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Character.class.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Characters/Character.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Character.class.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Characters/Character.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Basic.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Characters/Creatures/Basic.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Basic.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Characters/Creatures/Basic.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Boss.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Characters/Creatures/Boss.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Boss.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Characters/Creatures/Boss.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Creature.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Characters/Creatures/Creature.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Creatures/Creature.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Characters/Creatures/Creature.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Player.class.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Characters/Player.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Characters/Player.class.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Characters/Player.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Missiles/Missile.class.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Missiles/Missile.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Entity/Missiles/Missile.class.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Entity/Missiles/Missile.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Game.class.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Game.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Game.class.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Game.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Map/Map.class.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Map/Map.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Map/Map.class.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Map/Map.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Map/Square.class.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Map/Square.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Map/Square.class.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Map/Square.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Weapons/Weapon.class.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Weapons/Weapon.class.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Weapons/Weapon.class.hpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/Weapons/Weapon.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/mainmatthieu.cpp">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/main.cpp">
 			<Option target="CppRush00"/>
 		</Unit>
-		<Unit filename="/home/pelluro/Documents/Work/CppRush00/CMakeLists.txt">
+		<Unit filename="/Users/mipham/Documents/PiscineCpp/cppRush/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
