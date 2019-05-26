@@ -28,5 +28,14 @@ class Riffle : public Weapon
 
 };
 
+class MasterRiffle : public Weapon
+{
+    public:
+        MasterRiffle( void );
+        virtual ~MasterRiffle( void );
+
+
+};
+
 #endif
 

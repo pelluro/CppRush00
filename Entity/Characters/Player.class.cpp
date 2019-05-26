@@ -17,7 +17,7 @@ Player::Player( void ) : Character(){
 	this->_y = HEIGHT - 1;
 	this->_oldX = this->_x;
 	this->_oldY = this->_y;
-	this->_type = 'X';
+	this->_type = 'A';
 	this->_name = "Player";
 	this->_direction = LESS_Y;
 	this->equipWeapon(new Riffle);

@@ -8,15 +8,9 @@
 
 #include "../AEntity.class.hpp"
 #include "Bonus.class.hpp"
+#include "../../Weapons/Gun.hpp"
 
-class WeaponUpgrade:public Bonus
-{
-    public:
 
-    virtual void	onEntityHit ( void );
-
-    protected:
-
-};
 
 #endif
+

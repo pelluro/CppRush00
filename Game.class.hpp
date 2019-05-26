@@ -19,6 +19,7 @@
 #include "Entity/Characters/Player.class.hpp"
 #include "Map/Map.class.hpp"
 #include <ncurses.h>
+#include <unistd.h>
 #include <ctime>
 
 
@@ -52,6 +53,9 @@ public:
 	AEntity *getEntity( int idx ) const;
 	void removeEntity(int idx);
 	int getCount( void ) const;
+
+	void addLife( void );
+	void changeWeapon( Weapon * w );
 
 	void log(std::string);
 

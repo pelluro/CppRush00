@@ -20,3 +20,13 @@ Riffle::~Riffle( void )
 {
 
 }
+
+MasterRiffle::MasterRiffle( void ):Weapon(400)
+{
+	this->m.setSpeed(50);
+}
+
+MasterRiffle::~MasterRiffle( void )
+{
+
+}
