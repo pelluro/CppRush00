@@ -62,7 +62,7 @@ void Game::start()
 	nodelay(stdscr,true);
 	int i = 0;
 
-	while(listen()){
+	while(listen() && this->_player->getHP()>0){
 		std::stringstream o;
 		o << i << "||" << this->getCount() << "||" << this->_player->getHP() << std::endl;
 		this->log(o.str());
@@ -75,7 +75,7 @@ void Game::start()
 			case 15:
 			{
 				AEntity* unit = new Basic();
-				unit->setX(rand() % WIDTH - 2 );
+				unit->setX(WIDTH - 2 );
 				unit->setY(1);
 				this->addEntity(unit);
 				break;
@@ -85,13 +85,13 @@ void Game::start()
 		this->_score++;
 		this->displayInfo();
 	}
+	this->gameOver();
 }
 
 void Game::iterate()
 {
 	int i = 0;
 	AEntity* entity;
-
 	while (i < this->getCount())
 	{
 		entity = this->getEntity(i);
@@ -250,15 +250,34 @@ int Game::getScore(void) const
 	return this->_score;
 }
 
+void Game::increaseScore(int s)
+{
+	this->_score += s;
+	if(this->_score < 0)
+		this->_score = 0;
+}
+
 int Game::getTimer(void) const
 {
 	return this->_timer;
 }
 
+void Game::gameOver(void)
+{
+	nodelay(stdscr,false);
+	this->log("ENTER KEYBOARD TO LEAVE");
+	getch();
+}
+
 void	Game::displayInfo(void)
 {
-	std::string info = "HP: " + std::to_string(this->_player->getHP()) + " lives" ;
+	std::stringstream o;
+	o << "HP: "  << this->_player->getHP() << " lives" << std::endl;
+	std::string info = o.str();
 	mvwprintw(this->_winInfo, 2, 1, info.c_str());
-	info = "Score: " + std::to_string(this->getScore() / 1000);
+	o.clear();
+	int score = this->getScore();
+	o << "Score: " << score << std::endl;
+	info = o.str();
 	mvwprintw(this->_winInfo, 4, 1, info.c_str());
 }
