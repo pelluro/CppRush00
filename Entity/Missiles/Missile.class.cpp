@@ -1,4 +1,5 @@
 #include "Missile.class.hpp"
+#include "../../Game.class.hpp"
 
 
 Missile::Missile( void ):
@@ -63,6 +64,8 @@ bool		Missile::toDelete( void )
 void	Missile::hit( const AEntity &s )
 {
 	(void)s;
+	Game* g = Game::getGame();
+	g->increaseScore(10000);
 	this->_is_destroy = true;
 }
 

@@ -8,6 +8,7 @@
 
 #include "../AEntity.class.hpp"
 #include "Player.class.hpp"
+#include "../../Game.class.hpp"
 
 #include "../../Weapons/Gun.hpp"
 
@@ -61,7 +62,12 @@ void          			Player::fire( void )
 
 void	Player::hit( AEntity const & entity ){
 	if (entity.getDealDamage())
-		this->setHP(this->getHP() - entity.getDealDamage());
+		{
+			this->setHP(this->getHP() - entity.getDealDamage());
+			Game* g = Game::getGame();
+			g->increaseScore(-10000);
+		}
+
 }
 
 bool	Player::move( void ){

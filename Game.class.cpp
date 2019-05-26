@@ -1,6 +1,15 @@
-//
-// Created by pelluro on 25/05/19.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Game.class.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mipham <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/26 16:45:56 by mipham            #+#    #+#             */
+/*   Updated: 2019/05/26 16:46:02 by mipham           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include <sstream>
 #include "Game.class.hpp"
@@ -62,10 +71,14 @@ void Game::start()
 	nodelay(stdscr,true);
 	int i = 0;
 
+<<<<<<< HEAD
 	AEntity* unit;
 
 	while(listen()){
 		usleep(10);
+=======
+	while(listen() && this->_player->getHP()>0){
+>>>>>>> b1448cb7a43d72c6c2ad8c463e211bc5d76179ac
 		std::stringstream o;
 		o << i << "||" << this->getCount() << "||" << this->_player->getHP() << std::endl;
 		this->log(o.str());
@@ -84,6 +97,7 @@ void Game::start()
 			case 1050:
 			case 1200:
 			{
+<<<<<<< HEAD
 				unit = new Basic();
 				unit->setX(rand() % (WIDTH - 2) );
 				unit->setY(1);
@@ -95,6 +109,11 @@ void Game::start()
 			{
 				unit = new Tier2();
 				unit->setX(rand() % (WIDTH - 2) );
+=======
+				AEntity* unit = new Basic();
+				unit->setX(rand() % (WIDTH - 2) );
+
+>>>>>>> b1448cb7a43d72c6c2ad8c463e211bc5d76179ac
 				unit->setY(1);
 				this->addEntity(unit);
 				break;
@@ -104,13 +123,13 @@ void Game::start()
 		this->_score++;
 		this->displayInfo();
 	}
+	this->gameOver();
 }
 
 void Game::iterate()
 {
 	int i = 0;
 	AEntity* entity;
-
 	while (i < this->getCount())
 	{
 		entity = this->getEntity(i);
@@ -269,11 +288,19 @@ int Game::getScore(void) const
 	return this->_score;
 }
 
+void Game::increaseScore(int s)
+{
+	this->_score += s;
+	if(this->_score < 0)
+		this->_score = 0;
+}
+
 int Game::getTimer(void) const
 {
 	return this->_timer;
 }
 
+<<<<<<< HEAD
 void Game::addLife( void )
 {
 	this->_player->setHP(this->_player->getHP() + 1);
@@ -285,10 +312,24 @@ void Game::changeWeapon( Weapon * w )
 }
 
 
+=======
+void Game::gameOver(void)
+{
+	nodelay(stdscr,false);
+	this->log("ENTER KEYBOARD TO LEAVE");
+	getch();
+}
+
+>>>>>>> b1448cb7a43d72c6c2ad8c463e211bc5d76179ac
 void	Game::displayInfo(void)
 {
-	std::string info = "HP: " + std::to_string(this->_player->getHP()) + " lives" ;
+	std::stringstream o;
+	o << "HP: "  << this->_player->getHP() << " lives" << std::endl;
+	std::string info = o.str();
 	mvwprintw(this->_winInfo, 2, 1, info.c_str());
-	info = "Score: " + std::to_string(this->getScore() / 1000);
+	o.clear();
+	int score = this->getScore();
+	o << "Score: " << score << std::endl;
+	info = o.str();
 	mvwprintw(this->_winInfo, 4, 1, info.c_str());
 }

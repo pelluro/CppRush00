@@ -1,6 +1,15 @@
-//
-// Created by pelluro on 25/05/19.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Game.class.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mipham <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/26 16:46:12 by mipham            #+#    #+#             */
+/*   Updated: 2019/05/26 16:46:17 by mipham           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef GAME_HPP
 #define GAME_HPP
@@ -28,6 +37,7 @@ public:
 
 	int getTimer() const;
 	int getScore() const;
+	void increaseScore(int s);
 	//void loop(void);
 	bool listen(void);
 	//void refreshBox(void);
