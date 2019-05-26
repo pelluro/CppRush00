@@ -29,4 +29,22 @@ class Basic:public Creature
 
 };
 
+class Tier2:public Creature
+{
+    public:
+        Tier2( void );
+        Tier2( Tier2 const & src );
+        virtual ~Tier2( void );
+
+        Tier2 const &       operator=( Tier2 const & rhs );
+        virtual void            move( int dx, int dy );
+
+        virtual Tier2 *             clone( void );
+        virtual bool            move( void );
+        virtual bool            onMove( void );
+
+    protected:
+
+};
+
 #endif

@@ -35,7 +35,7 @@ srcfiles :=	main.cpp Entity/AEntity.class.cpp			\
 		Weapons/Gun.cpp							\
 		Map/Map.class.cpp	\
 		Map/Square.class.cpp	\
-		Game.class.cpp \
+		Game.class.cpp 
 
 DEBUG	= ./debug_$(NAME)
 FAN		= -fsanitize=address,undefined -g

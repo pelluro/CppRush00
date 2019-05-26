@@ -62,20 +62,39 @@ void Game::start()
 	nodelay(stdscr,true);
 	int i = 0;
 
+	AEntity* unit;
+
 	while(listen()){
+		usleep(10);
 		std::stringstream o;
 		o << i << "||" << this->getCount() << "||" << this->_player->getHP() << std::endl;
 		this->log(o.str());
 		this->iterate();
-		if(i == 6000)
+		if(i == 40000)
 		{
 			i = 0;
 		}
 		switch(i++){
-			case 15:
+			case 150:
+			case 300:
+			case 450:
+			case 600:
+			case 750:
+			case 900:
+			case 1050:
+			case 1200:
 			{
-				AEntity* unit = new Basic();
-				unit->setX(rand() % WIDTH - 2 );
+				unit = new Basic();
+				unit->setX(rand() % (WIDTH - 2) );
+				unit->setY(1);
+				this->addEntity(unit);
+				break;
+			}
+			case 1000:
+			case 2000:
+			{
+				unit = new Tier2();
+				unit->setX(rand() % (WIDTH - 2) );
 				unit->setY(1);
 				this->addEntity(unit);
 				break;
@@ -254,6 +273,17 @@ int Game::getTimer(void) const
 {
 	return this->_timer;
 }
+
+void Game::addLife( void )
+{
+	this->_player->setHP(this->_player->getHP() + 1);
+}
+
+void Game::changeWeapon( Weapon * w )
+{
+	this->_player->equipWeapon(w);
+}
+
 
 void	Game::displayInfo(void)
 {
