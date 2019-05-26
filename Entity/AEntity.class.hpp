@@ -38,7 +38,11 @@ class AEntity
 		virtual ~AEntity( void );
 
 		AEntity const &		operator=( AEntity const & rhs );
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 1fd78559a82c044654b9d94c1ebf6964895c8cf2
 		//	Actions
 		virtual void    hit( AEntity const & entity );
 		virtual void	move( int dx, int dy );
