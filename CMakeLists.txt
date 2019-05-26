@@ -30,7 +30,7 @@ add_library(CppRush00
         Map/Map.class.hpp
         Map/Square.class.cpp
         Map/Square.class.hpp
-        mainmatthieu.cpp
+        main.cpp
         Game.class.cpp
         Game.class.hpp
         Constants.hpp)

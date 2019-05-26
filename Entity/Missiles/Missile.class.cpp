@@ -2,7 +2,7 @@
 
 
 Missile::Missile( void ):
-AEntity("missile", '|', 50, 0)
+AEntity("missile", '|', 5, 0)
 {
 	this->_deal_damage = 1;
 	this->_is_destroy = false;

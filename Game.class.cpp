@@ -69,10 +69,10 @@ void Game::start()
 		switch(i++){
 			case 15:
 			{
-//				AEntity* unit = new Basic();
-//				unit->setX(20);
-//				unit->setY(2);
-//				this->addEntity(unit);
+				AEntity* unit = new Basic();
+				unit->setX(2);
+				unit->setY(20);
+				this->addEntity(unit);
 				break;
 			}
 		}
@@ -96,27 +96,36 @@ void Game::iterate()
 			this->removeEntity(i);
 		i++;
 	}
-//	for (int x = 0; x < WIDTH; x++)
-//	{
-//		for (int y = 0; y < HEIGHT; y++)
-//		{
-//			if(this->_map->getSquare(x,y)->hasEntity())
-//			{
-//				AEntity* entity = this->_map->getSquare(x,y)->getEntity();
-//				entity->move();
-//				if(entity->getDirection() != 0 && entity->getY() == HEIGHT - 1)
-//				{
-//					// creature reached the bottom
-//					this->_map->updateEntity(entity);
+	for (int x = 0; x < WIDTH; x++)
+	{
+		for (int y = 0; y < HEIGHT; y++)
+		{
+			if(this->_map->getSquare(x,y)->hasEntity())
+			{
+				AEntity* entity = this->_map->getSquare(x,y)->getEntity();
+				entity->move();
+				if(entity->getDirection() != 0 && entity->getY() == HEIGHT - 1)
+				{
+					// creature reached the bottom
+					this->_map->updateEntity(entity);
 //					this->_map->removeEntity(entity->getX(),entity->getY());
-//				}
-//				else
-//				{
+				}
+				else if ((entity->getDirection() == LESS_Y || entity->getDirection() == LESS_X ||
+				 entity->getDirection() == PLUS_X || entity->getDirection() == PLUS_Y ||
+					entity->getDirection() == LESS_X_PLUS_Y || entity->getDirection() == PLUS_X_LESS_Y ||
+					entity->getDirection() == PLUS_X_PLUS_Y) && entity->getY() == -1)
+				{
 //					this->_map->updateEntity(entity);
-//				}
-//			}
-//		}
-//	}
+					this->_map->removeEntity(entity->getX(),entity->getY());
+				}
+				else
+				{
+					this->_map->updateEntity(entity);
+				}
+
+			}
+		}
+	}
 }
 
 bool Game::listen(void)
