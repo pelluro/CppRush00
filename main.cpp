@@ -40,6 +40,5 @@ int		main( void )
 	delete g;
 
 	endwin();
-	while(1);
 	return (0);
 }

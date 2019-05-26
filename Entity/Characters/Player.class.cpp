@@ -65,7 +65,7 @@ void	Player::hit( AEntity const & entity ){
 		{
 			this->setHP(this->getHP() - entity.getDealDamage());
 			Game* g = Game::getGame();
-			g->increaseScore(-10000);
+			g->increaseScore(-1000);
 		}
 
 }

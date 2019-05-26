@@ -4,7 +4,7 @@
 
 Character::Character( void ): AEntity()
 {
-	this->setHP(10);
+	this->setHP(3);
 	this->_weapon = NULL;
 }
 

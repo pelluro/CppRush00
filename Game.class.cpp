@@ -92,7 +92,6 @@ void Game::start()
 			}
 		}
 		this->_map->print(this->_winGame);
-		this->_score++;
 		this->displayInfo();
 	}
 	this->gameOver();
@@ -135,7 +134,6 @@ bool Game::listen(void)
 	int ch = getch();
 
 	this->_player->wait();
-
 	switch (ch)
 	{
 		case KEY_LEFT:
@@ -156,7 +154,7 @@ bool Game::listen(void)
 			nodelay(stdscr,true);
 			return (true);
 		case 27:
-			return (false);
+			return false;
 		case 32:
 		{
 			this->_player->fire();
@@ -274,9 +272,14 @@ int Game::getTimer(void) const
 
 void Game::gameOver(void)
 {
+	wrefresh(this->_winInfo);
+	wmove(this->_winInfo, 0,0);
+	mvwprintw(this->_winInfo, 0, 0, "GAME OVER              ");
+	mvwprintw(this->_winInfo, 1, 0, "ENTER KEYBOARD TO LEAVE");
+	wrefresh(this->_winInfo);
 	nodelay(stdscr,false);
-	this->log("ENTER KEYBOARD TO LEAVE");
 	getch();
+
 }
 
 void	Game::displayInfo(void)
@@ -284,7 +287,6 @@ void	Game::displayInfo(void)
 	std::stringstream o;
 	o << "HP: "  << this->_player->getHP() << " lives" << std::endl;
 	std::string info = o.str();
-	mvwprintw(this->_winInfo, 2, 1, info.c_str());
 	o.clear();
 	int score = this->getScore();
 	o << "Score: " << score << std::endl;
