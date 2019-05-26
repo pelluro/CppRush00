@@ -25,7 +25,6 @@ AEntity("missile", '|', speed, direction)
 Missile::Missile( Missile const & src )
 {
 	*this = src;
-	this->_is_destroy = false;
 }
 
 Missile::~Missile( void )

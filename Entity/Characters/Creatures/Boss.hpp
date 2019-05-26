@@ -12,8 +12,6 @@
 #include "Creature.hpp"
 #include "../../../Weapons/Gun.hpp"
 
-class Gun;
-
 class Boss:public Creature
 {
     public:
@@ -23,7 +21,7 @@ class Boss:public Creature
 
     	Boss const &		operator=( Boss const & rhs );
 
-		virtual void    		move( void );
+		virtual bool    		move( void );
 		virtual bool			onMove( void );
 		virtual void			move( int dx, int dy );
 

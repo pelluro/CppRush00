@@ -17,7 +17,7 @@ class Creature: public Character
         Creature( Creature const & src );
         virtual ~Creature( void );
 
-		virtual void    		move( void );
+		virtual bool    		move( void );
 		virtual bool			onMove( void );
 		virtual void			move( int dx, int dy );
 

@@ -17,6 +17,7 @@ Game::Game()
 	this->_player = new Player();
 	this->_count = 0;
 	this->_entity = NULL;
+	this->_current_game = this;
 }
 
 Game::Game(const Game & src)
@@ -88,10 +89,16 @@ void Game::iterate()
 	while (i < this->getCount())
 	{
 		entity = this->getEntity(i);
-		entity->move();
-		this->_map->updateEntity(entity);
+		if (entity->move())
+			this->_map->updateEntity(entity);
 		if (entity->onAction())
 			entity->fire();
+		i++;
+	}
+	i = 0;
+	while (i < this->getCount())
+	{
+		entity = this->getEntity(i);
 		if (entity->toDelete())
 			this->removeEntity(i);
 		i++;

@@ -39,23 +39,18 @@ Creature const &		Creature::operator=( Creature const & rhs )
 {
 	if (this != &rhs)
 	{
-		Character::operator=(rhs);
+		this->Character::operator=(rhs);
 	}
 	return *this;
 }
 
 void					Creature::hit( AEntity const & entity )
 {
-	if (entity.getType() == 'X')
-	{
-		this->takeDamage(COLLISION_DAMAGE);
-	}
-	else if (entity.getType() == '|')
-		this->takeDamage(entity.getDealDamage());
+	this->takeDamage(entity.getDealDamage());
 }
 
-void    		Creature::move( void ){
-	this->AEntity::move();
+bool    		Creature::move( void ){
+	return this->AEntity::move();
 }
 void    		Creature::move( int dx, int dy  ){
 	this->AEntity::move(dx,dy);

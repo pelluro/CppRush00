@@ -11,8 +11,6 @@
 #include "Creature.hpp"
 #include "../../../Weapons/Gun.hpp"
 
-class Gun;
-
 class Basic:public Creature
 {
     public:
@@ -24,7 +22,7 @@ class Basic:public Creature
 		virtual void			move( int dx, int dy );
 
         virtual Basic * 			clone( void );
-		virtual void    		move( void );
+		virtual bool    		move( void );
 		virtual bool			onMove( void );
 
     protected:

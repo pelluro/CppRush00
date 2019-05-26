@@ -22,7 +22,7 @@ Boss const &		Boss::operator=( Boss const & rhs )
 {
 	if (this != &rhs)
 	{
-		Creature::operator=(rhs);
+		this->Creature::operator=(rhs);
 	}
 	return *this;
 }
@@ -32,8 +32,8 @@ Boss *		 			Boss::clone( void )
 	return new Boss(*this);
 }
 
-void    		Boss::move( void ){
-	this->AEntity::move();
+bool    		Boss::move( void ){
+	return this->AEntity::move();
 }
 bool			Boss::onMove( void ){
 	return this->AEntity::onMove();

@@ -64,7 +64,7 @@ class AEntity
 		char			getType(void) const;
 		void			setType( char type);
 
-		virtual void    move( void );
+		virtual bool    move( void );
 		virtual void    forceMove( void );
 		virtual bool	onMove( void );
 

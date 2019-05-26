@@ -45,8 +45,8 @@ void	Player::hit( AEntity const & entity ){
 		this->setHP(this->getHP() - entity.getDealDamage());
 }
 
-void	Player::move( void ){
-
+bool	Player::move( void ){
+	return true;
 }
 
 void Player::move(int x, int y)

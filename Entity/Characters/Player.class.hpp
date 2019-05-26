@@ -19,7 +19,7 @@ class Player:public Character
     	Player const &		operator=( Player const & rhs );
 
         virtual void            hit( AEntity const & entity );
-		virtual void    		move( void );
+		virtual bool    		move( void );
 		virtual bool			onMove( void );
 		void        move( int dx, int dy);
 

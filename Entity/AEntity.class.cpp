@@ -142,9 +142,10 @@ void			AEntity::setType(char type)
 }
 
 
-void            	AEntity::move( void )
+bool            	AEntity::move( void )
 {
-	if(this->onMove())
+	bool move = this->onMove();
+	if(move)
 	{
 		if (this->_direction == LESS_Y)
 			this->move(0, -1);
@@ -163,6 +164,7 @@ void            	AEntity::move( void )
 		else if (this->_direction == PLUS_X_PLUS_Y)
 			this->move(1, 1);
 	}
+	return move;
 }
 
 void            	AEntity::forceMove( void )
