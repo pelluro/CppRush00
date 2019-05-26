@@ -73,7 +73,6 @@ void Map::removeEntity(int x, int y)
 
 void Map::print(WINDOW *w)
 {
-	// Vide l ecran
 	// Affiche les bordures
 	for (int i = 0; i < HEIGHT; i++)
 	{
@@ -95,6 +94,8 @@ void Map::print(WINDOW *w)
 				wmove(w, entity->getY(), entity->getX());
 				waddch(w, entity->getType());
 			}
+			s = NULL;
+			delete s;
 		}
 	}
 

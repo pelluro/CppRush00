@@ -24,6 +24,8 @@ add_library(CppRush00
         Entity/Characters/Character.class.hpp
         Entity/Characters/Player.class.hpp
         Entity/Characters/Player.class.cpp
+        Weapons/Weapon.class.cpp
+        Weapons/Weapon.class.hpp
         Map/Map.class.cpp
         Map/Map.class.hpp
         Map/Square.class.cpp

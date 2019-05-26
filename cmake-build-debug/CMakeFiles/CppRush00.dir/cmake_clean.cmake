@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/CppRush00.dir/Entity/Characters/Creatures/Basic.cpp.o"
   "CMakeFiles/CppRush00.dir/Entity/Characters/Character.class.cpp.o"
   "CMakeFiles/CppRush00.dir/Entity/Characters/Player.class.cpp.o"
+  "CMakeFiles/CppRush00.dir/Weapons/Weapon.class.cpp.o"
   "CMakeFiles/CppRush00.dir/Map/Map.class.cpp.o"
   "CMakeFiles/CppRush00.dir/Map/Square.class.cpp.o"
   "CMakeFiles/CppRush00.dir/mainmatthieu.cpp.o"

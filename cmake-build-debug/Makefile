@@ -474,6 +474,33 @@ Map/Square.class.cpp.s:
 	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Map/Square.class.cpp.s
 .PHONY : Map/Square.class.cpp.s
 
+Weapons/Weapon.class.o: Weapons/Weapon.class.cpp.o
+
+.PHONY : Weapons/Weapon.class.o
+
+# target to build an object file
+Weapons/Weapon.class.cpp.o:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Weapons/Weapon.class.cpp.o
+.PHONY : Weapons/Weapon.class.cpp.o
+
+Weapons/Weapon.class.i: Weapons/Weapon.class.cpp.i
+
+.PHONY : Weapons/Weapon.class.i
+
+# target to preprocess a source file
+Weapons/Weapon.class.cpp.i:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Weapons/Weapon.class.cpp.i
+.PHONY : Weapons/Weapon.class.cpp.i
+
+Weapons/Weapon.class.s: Weapons/Weapon.class.cpp.s
+
+.PHONY : Weapons/Weapon.class.s
+
+# target to generate assembly for a file
+Weapons/Weapon.class.cpp.s:
+	$(MAKE) -f CMakeFiles/CppRush00.dir/build.make CMakeFiles/CppRush00.dir/Weapons/Weapon.class.cpp.s
+.PHONY : Weapons/Weapon.class.cpp.s
+
 mainmatthieu.o: mainmatthieu.cpp.o
 
 .PHONY : mainmatthieu.o
@@ -549,6 +576,9 @@ help:
 	@echo "... Map/Square.class.o"
 	@echo "... Map/Square.class.i"
 	@echo "... Map/Square.class.s"
+	@echo "... Weapons/Weapon.class.o"
+	@echo "... Weapons/Weapon.class.i"
+	@echo "... Weapons/Weapon.class.s"
 	@echo "... mainmatthieu.o"
 	@echo "... mainmatthieu.i"
 	@echo "... mainmatthieu.s"

@@ -2,7 +2,7 @@
 
 
 
-Basic::Basic( void ): Creature('^', "monster", 1, PLUS_Y ,1 , NULL)
+Basic::Basic( void ): Creature('^', "monster", 1000, PLUS_X , 1, NULL)
 {
 	
 }
