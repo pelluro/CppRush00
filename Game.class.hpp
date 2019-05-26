@@ -36,6 +36,7 @@ public:
 
 	int getTimer() const;
 	int getScore() const;
+	void increaseScore(int s);
 	//void loop(void);
 	bool listen(void);
 	//void refreshBox(void);
