@@ -76,7 +76,6 @@ void Game::start()
 	while(listen() && this->_player->getHP()>0){
 		 usleep(10);
 		std::stringstream o;
-		o << i << "||" << this->getCount() << "||" << this->_player->getHP() << std::endl;
 		this->log(o.str());
 		this->iterate();
 		if(i == 40000)
