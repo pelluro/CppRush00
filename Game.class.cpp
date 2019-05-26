@@ -75,7 +75,7 @@ void Game::start()
 			case 15:
 			{
 				AEntity* unit = new Basic();
-				unit->setX(rand() % WIDTH - 2 );
+				unit->setX(WIDTH / 2);
 				unit->setY(1);
 				this->addEntity(unit);
 				break;
@@ -266,8 +266,12 @@ int Game::getTimer(void) const
 
 void	Game::displayInfo(void)
 {
-	std::string info = "HP: " + std::to_string(this->_player->getHP()) + " lives" ;
+	std::stringstream o;
+	o << "HP: " << this->_player->getHP() << " lives" << std::endl;
+	std::string info = o.str();
+	o.clear();
 	mvwprintw(this->_winInfo, 2, 1, info.c_str());
-	info = "Score: " + std::to_string(this->getScore() / 1000);
+	o << "Score :" << this->getScore() / 1000 << std::endl;
+	info = o.str();
 	mvwprintw(this->_winInfo, 4, 1, info.c_str());
 }
