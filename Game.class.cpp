@@ -46,21 +46,23 @@ void Game::start()
 {
 	this->_map->addEntity(this->_player);
 	this->_map->print(this->_winGame);
-	nodelay(this->_winGame,true);
+	nodelay(stdscr,true);
 	int i = 0;
 	while(listen()){
+		std::stringstream o;
+		o << i << std::endl;
+		this->log(o.str());
 		this->iterate();
 		if(i == 60)
 		{
 			i = 0;
 		}
-		switch(i){
+		switch(i++){
 			case 15:
 				this->_map->addEntity(new Basic());
 				break;
 		}
 		this->_map->print(this->_winGame);
-		i++;
 	}
 }
 
@@ -74,8 +76,16 @@ void Game::iterate()
 			{
 				AEntity* entity = this->_map->getSquare(x,y)->getEntity();
 				entity->move();
-				this->log("Move "+entity->getName());
-				this->_map->updateEntity(entity);
+				if(entity->getDirection() != 0 && entity->getY() == HEIGHT - 1)
+				{
+					// creature reached the bottom
+					this->_map->updateEntity(entity);
+					this->_map->removeEntity(entity->getX(),entity->getY());
+				}
+				else
+				{
+					this->_map->updateEntity(entity);
+				}
 			}
 		}
 	}
@@ -103,9 +113,10 @@ bool Game::listen(void)
 			this->_map->updateEntity(this->_player);
 			break;
 		case KEY_HOME:
-			nodelay(this->_winGame,false);
+			nodelay(stdscr,false);
 			while ((ch = getch()) != KEY_HOME);
-			nodelay(this->_winGame,true);
+			nodelay(stdscr,true);
+			return (true);
 		case 27:
 			return (false);
 		case 32:

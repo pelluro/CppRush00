@@ -165,6 +165,12 @@
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Map/Square.class.hpp">
 			<Option target="CppRush00"/>
 		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Weapons/Weapon.class.cpp">
+			<Option target="CppRush00"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/CppRush00/Weapons/Weapon.class.hpp">
+			<Option target="CppRush00"/>
+		</Unit>
 		<Unit filename="/home/pelluro/Documents/Work/CppRush00/mainmatthieu.cpp">
 			<Option target="CppRush00"/>
 		</Unit>

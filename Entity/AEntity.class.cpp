@@ -16,26 +16,26 @@
 #include "../Map/Map.class.hpp"
 
 AEntity::AEntity( void ):
-_x(0),_y(0), _oldX(), _oldY(), _speed(), _turn_before_move(), _direction(), _name("nobody"), _type( '_' )
+_x(0),_y(0), _oldX(0), _oldY(0), _speed(1), _turn_before_move(1), _direction(), _name("nobody"), _type( '_' )
 {
 
 }
 
 
 AEntity::AEntity( std::string name, char type ):
-_x(0), _y(0), _oldX(0), _oldY(0), _speed(), _turn_before_move(), _direction(), _name(name), _type(type)
+_x(0), _y(0), _oldX(0), _oldY(0), _speed(1), _turn_before_move(1), _direction(), _name(name), _type(type)
 {
 
 }
 
 AEntity::AEntity( std::string name, char type,int speed, int direction  ):
- _x(0), _y(0), _oldX(), _oldY(), _speed(speed), _turn_before_move(), _direction(direction), _name(name), _type(type)
+ _x(0), _y(0), _oldX(0), _oldY(0), _speed(speed), _turn_before_move(speed), _direction(direction), _name(name), _type(type)
 {
 
 }
 
 AEntity::AEntity( char type ):
-_x(0), _y(0), _oldX(), _oldY(), _speed(), _turn_before_move(), _direction(), _name(""), _type(type)
+_x(0), _y(0), _oldX(0), _oldY(0), _speed(1), _turn_before_move(1), _direction(), _name(""), _type(type)
 {
 
 }
@@ -134,22 +134,25 @@ void			AEntity::setType(char type)
 
 void            	AEntity::move( void )
 {
-	if (this->_direction == LESS_Y)
-		this->move(0, -1);
-	else if (this->_direction == PLUS_Y)
-		this->move(1, 0);
-	else if (this->_direction == LESS_X)
-		this->move(-1, 0);
-	else if (this->_direction == PLUS_X)
-		this->move(0, 1);
-	else if (this->_direction == LESS_X_LESS_Y)
-		this->move(-1, -1);
-	else if (this->_direction == LESS_X_PLUS_Y)
-		this->move(-1, 1);
-	else if (this->_direction == PLUS_X_LESS_Y)
-		this->move(1, -1);
-	else if (this->_direction == PLUS_X_PLUS_Y)
-		this->move(1, 1);
+	if(this->onMove())
+	{
+		if (this->_direction == LESS_Y)
+			this->move(0, -1);
+		else if (this->_direction == PLUS_Y)
+			this->move(1, 0);
+		else if (this->_direction == LESS_X)
+			this->move(-1, 0);
+		else if (this->_direction == PLUS_X)
+			this->move(0, 1);
+		else if (this->_direction == LESS_X_LESS_Y)
+			this->move(-1, -1);
+		else if (this->_direction == LESS_X_PLUS_Y)
+			this->move(-1, 1);
+		else if (this->_direction == PLUS_X_LESS_Y)
+			this->move(1, -1);
+		else if (this->_direction == PLUS_X_PLUS_Y)
+			this->move(1, 1);
+	}
 }
 
 
