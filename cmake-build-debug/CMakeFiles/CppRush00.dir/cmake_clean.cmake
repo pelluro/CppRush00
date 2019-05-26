@@ -12,7 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/CppRush00.dir/Weapons/Weapon.class.cpp.o"
   "CMakeFiles/CppRush00.dir/Map/Map.class.cpp.o"
   "CMakeFiles/CppRush00.dir/Map/Square.class.cpp.o"
-  "CMakeFiles/CppRush00.dir/mainmatthieu.cpp.o"
+  "CMakeFiles/CppRush00.dir/main.cpp.o"
   "CMakeFiles/CppRush00.dir/Game.class.cpp.o"
   "libCppRush00.pdb"
   "libCppRush00.a"

@@ -1,2 +1,0 @@
-/bin/ar qc libmain.cpp.a  CMakeFiles/main.cpp.dir/Ncurses.cpp.o CMakeFiles/main.cpp.dir/Entity/Bonus/Bonus.class.cpp.o CMakeFiles/main.cpp.dir/Entity/Bonus/WeaponUpgrade.class.cpp.o
-/bin/ranlib libmain.cpp.a
