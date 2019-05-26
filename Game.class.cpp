@@ -84,7 +84,7 @@ void Game::start()
 			case 15:
 			{
 				AEntity* unit = new Basic();
-				unit->setX(rand() % WIDTH - 2 );
+				unit->setX(rand() % (WIDTH - 2) );
 				unit->setY(1);
 				this->addEntity(unit);
 				break;
