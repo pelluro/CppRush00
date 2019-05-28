@@ -7,39 +7,50 @@
 # include <iostream>
 
 #include "../AEntity.class.hpp"
-#include "../Weapons/Weapon.class.hpp"
+#include "../../Weapons/Weapon.class.hpp"
+
+
+# define COLLISION_DAMAGE 1
 
 class Character: public AEntity
 {
     public:
-    Character( void );
-    Character( int hp );
-    Character( std::string type, int hp );
-    Character( Character const & src );
-    virtual ~Character( void );
+        Character( void );
+        Character( char type, std::string name, int hp, Weapon * weapon );
+        Character( Character const & src );
+        virtual ~Character( void );
 
-    Character const &     operator=( Character const & rhs );
+        Character const &     operator=( Character const & rhs );
 
+        virtual void          fire( void );
 
-    int     getHP( void ) const;
-    void    setHP( int hp );
+//		virtual void    		move( void );
+//		virtual bool			onMove( void );
 
-    void    equipWeapon( Weapon* weapon );
-    void    unequipWeapon( void );
-    Weapon* getWeapon( void ) const;
+        int                   getHP( void ) const;
+        void                  setHP( int hp );
+        void                  takeDamage( int damage );
 
-    virtual void	onEntityHit ( void ) = 0;
+        virtual int           getDealDamage( void ) const;
+
+        virtual bool          onAction( void );
+        virtual bool          toDelete( void );
+
+        void                  equipWeapon( Weapon* weapon );
+        void                  unequipWeapon( void );
+        Weapon*               getWeapon( void ) const;
+
 
     protected:
     //health point
-    int _hp;
-    Weapon* weapon;
+    int         _hp;
+    Weapon*     _weapon;
 
-    int			_move_frequency;		// if < 1 would be to do each turn
-	int			_turn_before_move;		// initiayze at _action_frequency
+
 
 
 
 };
 
 #endif
+

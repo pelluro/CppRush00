@@ -12,71 +12,89 @@
 
 
 #ifndef AENTITY_CLASS_H
-
 # define AENTITY_CLASS_H
 
 # include <string>
 # include <iostream>
 
+# define PLUS_X 0
+# define LESS_X 1
+# define PLUS_Y 2
+# define LESS_Y 3
+# define PLUS_X_PLUS_Y 5
+# define LESS_X_PLUS_Y 6
+# define PLUS_X_LESS_Y 7
+# define LESS_X_LESS_Y 8
 
 class AEntity
 {
 	public:
 		AEntity( void );
-		AEntity( std::string name, std::string type, int x, int y );
-		AEntity( std::string name, std::string type );
-		AEntity( std::string type );
+		AEntity( std::string name, char type );
+		AEntity( std::string name, char type, int speed);
+		AEntity( std::string name, char type, int speed, int direction );
+		AEntity( char type );
 		AEntity( AEntity const & src );
 		virtual ~AEntity( void );
 
 		AEntity const &		operator=( AEntity const & rhs );
 
-		//virtual void	onPlayerHit( void ) = 0;
-		//virtual void	onEnemyHit( void ) = 0;
+		//	Actions
+		virtual void    hit( AEntity const & entity );
+		virtual void	move( int dx, int dy );
 
-		virtual void	onEntityHit ( const AEntity &s ) = 0;
+//        virtual AEntity *     clone( void );
 
+        virtual int 	getDealDamage( void ) const;
 
-		virtual bool	onEvent( void );
-		virtual bool	onMove( void );
-
-		void			move( int x, int y );
-
+		//	Variables
 		void			setX( int x );
-		int				getX( void );
-
+		int				getX( void ) const;
+		int				getOldX( void ) const;
 		void			setY( int y );
-		int				getY( void );
+		int				getY( void ) const;
+		int				getOldY( void ) const;
 
-		std::string		getName(void);
+		std::string		getName(void) const;
 		void			setName( std::string name);
 
-		void			setActionFrequency( int frequency );
-		void			addToActionFrequency( int frequency );
+		char			getType(void) const;
+		void			setType( char type);
 
-		void			setMoveFrequency( int frequency );
-		void			addToMoveFrequency( int frequency );
+		virtual bool    move( void );
+		virtual void    forceMove( void );
+		virtual bool	onMove( void );
 
-	protected:
+		virtual bool	toDelete( void );
+
+		virtual void	fire( void ) = 0;
+		virtual bool	onAction( void ) = 0;
+
+		void            setSpeed( int frequency );
+		void            addSpeed( int frequency );
+		int             getSpeed( void ) const;
+
+		void            setDirection( int direction );
+		int             getDirection( void ) const;
+
+
+protected:
 		//	Positions
 		int			_x;
 		int 		_y;
+		int			_oldX;
+		int 		_oldY;
+
+		int			_speed;		// if <= 1 would be to do each turn
+		int			_turn_before_move;		// initialize at _speed
+		int 		_direction;
 
 		//Entity name
 		std::string	_name;
-		
+
 
 		//	Entity class
-		std::string	_type;
-
-		/*	on How many turn waiting to launch onEvent/onMove, every onEvent/onMove need to be like :
-		**		if (!AEntity::onEvent())
-		**			{ ... } 
-		**		return ;
-		*/
-
-
-
+		char _type;
 };
 
 

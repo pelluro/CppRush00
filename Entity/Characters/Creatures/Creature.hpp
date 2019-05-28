@@ -8,31 +8,31 @@
 
 #include "../../AEntity.class.hpp"
 #include "../Character.class.hpp"
-#include "../../Weapons/Weapon.class.hpp"
 
-<<<<<<< HEAD
 class Creature: public Character
 {
     public:
-    	Creature( void );
-    	Creature( std::string type, int hp );
-    	Creature( std::string type std::string name, int hp )
-		Creature( Creature const & src );
-    	virtual ~Creature( void );
+        Creature( void );
+        Creature( char type, std::string name, int speed, int direction, int hp, Weapon * weapon );
+        Creature( Creature const & src );
+        virtual ~Creature( void );
 
-    	Creature const &		operator=( Creature const & rhs );
+		virtual bool    		move( void );
+		virtual bool			onMove( void );
+		virtual void			move( int dx, int dy );
 
-		virtual void	onEntityHit ( void );
-=======
-class Creature:public Character
-{
-    public:
+        Creature const &        operator=( Creature const & rhs );
 
-    virtual void	onEntityHit ( void );
->>>>>>> minh
+        virtual void            hit( AEntity const & entity );
 
-    protected:
+
+
+
+
+protected:
+
 
 };
 
 #endif
+

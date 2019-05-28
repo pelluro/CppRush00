@@ -8,8 +8,9 @@
 
 #include "../../AEntity.class.hpp"
 #include "../Character.class.hpp"
-#include "../../Weapons/Weapon.class.hpp"
+
 #include "Creature.hpp"
+#include "../../../Weapons/Gun.hpp"
 
 class Boss:public Creature
 {
@@ -20,10 +21,15 @@ class Boss:public Creature
 
     	Boss const &		operator=( Boss const & rhs );
 
-    virtual void	onEntityHit ( void );
+		virtual bool    		move( void );
+		virtual bool			onMove( void );
+		virtual void			move( int dx, int dy );
+
+        virtual Boss * 			clone( void );
 
     protected:
 
 };
 
 #endif
+

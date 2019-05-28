@@ -1,28 +1,35 @@
-#include "Creature.class.hpp"
+#include "Creature.hpp"
+#include "../../../Constants.hpp"
+#include <ncurses.h>
 
-
-
-Creature::Creature( void ): Character(1, "creature")
+Creature::Creature( void ):
+ Character('@', "creature", 1, NULL)
 {
-
+	this->_x = WIDTH / 2;
+	this->_oldX = WIDTH / 2;
+	this->_y = 0;
+	this->_oldY = 0;
+	this->_speed = 1;
+	this->_direction = PLUS_Y;
 }
 
-Creature::Creature( std::string type, int hp ): Character(hp, type)
+Creature::Creature( char type, std::string name, int speed, int direction, int hp, Weapon * weapon ):
+Character(type, name, hp, weapon)
 {
-
+	this->_x = WIDTH / 2;
+	this->_oldX = WIDTH / 2;
+	this->_y = 0;
+	this->_oldY = 0;
+	this->_speed = speed;
+	this->_direction = direction;
 }
 
-Creature::Creature( std::string type std::string name, int hp ): Character(hp, type, name)
+Creature::Creature( Creature const & src )
 {
-
+	*this = src;
 }
 
-Creature::Creature( Creature & const src )
-{
-	*this = rhs;
-}
-
-virtual Creature::~Creature( void )
+Creature::~Creature( void )
 {
 
 }
@@ -30,11 +37,26 @@ virtual Creature::~Creature( void )
 
 Creature const &		Creature::operator=( Creature const & rhs )
 {
-	Character::operator=(rhs);
+	if (this != &rhs)
+	{
+		this->Character::operator=(rhs);
+	}
 	return *this;
 }
 
-void					Creature::onEntityHit ( void )
+void					Creature::hit( AEntity const & entity )
 {
-
+	this->takeDamage(entity.getDealDamage());
 }
+
+bool    		Creature::move( void ){
+	return this->AEntity::move();
+}
+void    		Creature::move( int dx, int dy  ){
+	this->AEntity::move(dx,dy);
+}
+bool			Creature::onMove( void ){
+	return this->AEntity::onMove();
+}
+
+

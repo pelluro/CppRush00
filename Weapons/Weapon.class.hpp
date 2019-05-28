@@ -6,27 +6,40 @@
 # include <string>
 # include <iostream>
 
-# include "Missile.class.hpp"
+# include "../Entity/Missiles/Missile.class.hpp"
 //weapon that's give missile
+
+class Missile;
 
 class Weapon 
 {
     public:
-    Weapon( void );
-    Weapon( std::string type, int x, int y );
-	Weapon( Weapon const & src );
-	virtual ~Weapon( void );
+        Weapon( void );
+        Weapon( int action_frequency );
+        Weapon( Weapon const & src );
+        virtual ~Weapon( void );
 
-	Weapon const &		operator=( Weapon const & rhs );
+        Weapon const &          operator=( Weapon const & rhs );
 
-    // Copy de l'instance de missile enregistre dans weapon pour envoyer sur la carte
-    void        fire( int x, int y );
+        virtual Weapon *        clone( void );
+
+        bool                    onAction( void );
+
+        Missile *               fire( void );
+
+        void                    setActionFrequency( int frequency );
+
+        void                    reload( void );
+
+        int                     getTurnBeforeAction( void ) const;
 
     protected:
-
-    Missile * m;
+        int     _action_frequency;
+        int     _turn_before_action;
+        Missile m;
 
 
 };
 
 #endif
+

@@ -1,0 +1,3 @@
+/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/CppRush00.dir
+/home/pelluro/Documents/Work/CppRush00/cmake-build-debug/CMakeFiles/edit_cache.dir

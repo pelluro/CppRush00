@@ -13,36 +13,38 @@
 
 
 #include "AEntity.class.hpp"
-<<<<<<< HEAD:Entity/AEntity.class.cpp
-
-=======
->>>>>>> minh:Entity/AEntity.class.cpp
-
+#include "../Map/Map.class.hpp"
 
 AEntity::AEntity( void ):
-_x(0),_y(0), _type( NULL ), _name("nobody")
+_x(0),_y(0), _oldX(0), _oldY(0), _speed(1), _turn_before_move(1), _direction(), _name("nobody"), _type( '_' )
 {
 
 }
 
-AEntity::AEntity( std::string name, std::string type, int x, int y ):
-_x(x),_y(y), _type( type ), _name( name )
+
+AEntity::AEntity( std::string name, char type ):
+_x(0), _y(0), _oldX(0), _oldY(0), _speed(1), _turn_before_move(1), _direction(), _name(name), _type(type)
 {
 
 }
 
-AEntity::AEntity( std::string name, std::string type ):
-_x(0), _y(0), _type(type), _name(name)
+AEntity::AEntity( std::string name, char type, int speed):
+_x(0), _y(0), _oldX(0), _oldY(0), _speed(speed), _turn_before_move(speed), _direction(), _name(name), _type(type)
 {
 
 }
 
-AEntity::AEntity( std::string type ):
-_x(0), _y(0), _type(type), _name(type)
+AEntity::AEntity( std::string name, char type, int speed, int direction  ):
+ _x(0), _y(0), _oldX(0), _oldY(0), _speed(speed), _turn_before_move(speed), _direction(direction), _name(name), _type(type)
 {
 
 }
 
+AEntity::AEntity( char type ):
+_x(0), _y(0), _oldX(0), _oldY(0), _speed(1), _turn_before_move(1), _direction(), _name(""), _type(type)
+{
+
+}
 
 AEntity::AEntity( AEntity const & src )
 {
@@ -54,7 +56,10 @@ AEntity::~AEntity( void )
 
 }
 
-
+//AEntity *     		AEntity::clone( void )
+//{
+//	return NULL;
+//}
 
 AEntity const &		AEntity::operator=( AEntity const & rhs )
 {
@@ -62,95 +67,181 @@ AEntity const &		AEntity::operator=( AEntity const & rhs )
 	{
 		this->_x = rhs._x;
 		this->_y = rhs._y;
-
+		this->_oldX = rhs._oldX;
+		this->_oldY = rhs._oldY;
 		this->_type = rhs._type;
-
-		this->_action_frequency = rhs._action_frequency;
-		this->_turn_before_action = rhs._turn_before_action;
-
-		this->_move_frequency = rhs._move_frequency;
+		this->_speed = rhs._speed;
 		this->_turn_before_move = rhs._turn_before_move;
+		this->_direction = rhs._direction;
+		this->_type = rhs._type;
 	}
 	return (*this);
 }
 
-void	AEntity::move( int x, int y )
+void				AEntity::move( int dx, int dy )
 {
-	this->_x += x;
-	this->_y += y;
-	// If X leave map put x in map
-	// If Y leave map delete Entity (protected pop it)
+	this->_oldX = this->_x;
+	this->_oldY = this->_y;
+	this->_x += dx;
+	this->_y += dy;
+	if(this->_x < 1)
+		this->_x = 1;
+	if(this->_y < 0)
+		this->_y = 0;
+	if(this->_x > WIDTH - 2)
+		this->_x = WIDTH - 2;
+	if(this->_y > HEIGHT - 1)
+		this->_y = HEIGHT - 1;
+	// If checkEntity true onHit() else tab[x][y] = &Aentity
 }
 
-bool	AEntity::onEvent( void )
+void    AEntity::hit( AEntity const & entity )
 {
-	if (--this->_turn_before_action <= 0 )
-	{
-		this->_turn_before_action = this->_action_frequency;
-		return true;
-	}
-	return false;
-
+	(void)entity;
 }
 
-bool	AEntity::onMove( void )
+int 	AEntity::getDealDamage( void ) const
 {
-	if (--this->_turn_before_move <= 0 )
-	{
-		this->_turn_before_move = this->_move_frequency;
-		return true;
-	}
-	return false;
-
+	return (0);
 }
-
-
-
-
-
 
 void	AEntity::setX( int x )
 {
 	this->_x = x;
 }
 
-int		AEntity::getX( void )
+int		AEntity::getX( void ) const
 {
 	return this->_x;
 }
 
+int		AEntity::getOldX( void ) const
+{
+	return this->_oldX;
+}
 
 void	AEntity::setY( int y )
 {
 	this->_y = y;
 }
 
-int		AEntity::getY( void )
+int		AEntity::getY( void ) const
 {
 	return this->_y;
 }
 
-
-void	AEntity::setActionFrequency( int frequency )
+int		AEntity::getOldY( void ) const
 {
-	this->_action_frequency = frequency;
-	this->_turn_before_action = frequency;
+	return this->_oldY;
 }
 
-void	AEntity::addToActionFrequency( int frequency )
+std::string		AEntity::getName(void) const
 {
-	this->_action_frequency += frequency;
+	return this->_name;
+}
+
+void			AEntity::setName( std::string name)
+{
+	this->_name = name;
 }
 
 
-void	AEntity::setMoveFrequency( int frequency )
+char	AEntity::getType(void) const
 {
-	this->_move_frequency = frequency;
+	return this->_type;
+}
+
+void			AEntity::setType(char type)
+{
+	this->_type = type;
+}
+
+
+bool            	AEntity::move( void )
+{
+	bool move = this->onMove();
+	if(move)
+	{
+		if (this->_direction == LESS_Y)
+			this->move(0, -1);
+		else if (this->_direction == PLUS_Y)
+			this->move(1, 0);
+		else if (this->_direction == LESS_X)
+			this->move(-1, 0);
+		else if (this->_direction == PLUS_X)
+			this->move(0, 1);
+		else if (this->_direction == LESS_X_LESS_Y)
+			this->move(-1, -1);
+		else if (this->_direction == LESS_X_PLUS_Y)
+			this->move(-1, 1);
+		else if (this->_direction == PLUS_X_LESS_Y)
+			this->move(1, -1);
+		else if (this->_direction == PLUS_X_PLUS_Y)
+			this->move(1, 1);
+	}
+	return move;
+}
+
+void            	AEntity::forceMove( void )
+{
+	if (this->_direction == LESS_Y)
+		this->move(0, -1);
+	else if (this->_direction == PLUS_Y)
+		this->move(1, 0);
+	else if (this->_direction == LESS_X)
+		this->move(-1, 0);
+	else if (this->_direction == PLUS_X)
+		this->move(0, 1);
+	else if (this->_direction == LESS_X_LESS_Y)
+		this->move(-1, -1);
+	else if (this->_direction == LESS_X_PLUS_Y)
+		this->move(-1, 1);
+	else if (this->_direction == PLUS_X_LESS_Y)
+		this->move(1, -1);
+	else if (this->_direction == PLUS_X_PLUS_Y)
+		this->move(1, 1);
+}
+
+bool AEntity::onMove( void )
+{
+	if (--this->_turn_before_move <= 0 )
+	{
+		this->_turn_before_move = this->_speed;
+		return true;
+	}
+	return false;
+}
+
+bool				AEntity::toDelete( void )
+{
+	if (this->getX() <= 0 || this->getX() >= WIDTH - 1
+		|| this->getY() <= 0 || this->getY() >= HEIGHT - 1)
+		return true;
+	return false;
+}
+
+void				AEntity::setSpeed( int frequency )
+{
+	this->_speed = frequency;
 	this->_turn_before_move = frequency;
 }
 
-void	AEntity::addToMoveFrequency( int frequency )
+void				AEntity::addSpeed( int frequency )
 {
-	this->_move_frequency += frequency;
+	this->_speed += frequency;
 }
 
+int             	AEntity::getSpeed( void ) const
+{
+	return this->_speed;
+}
+
+void            	AEntity::setDirection( int direction )
+{
+	this->_direction = direction;
+}
+
+int             	AEntity::getDirection( void ) const
+{
+	return this->_direction;
+}

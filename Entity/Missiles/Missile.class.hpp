@@ -5,29 +5,42 @@
 
 # include <string>
 # include <iostream>
-# include "Weapon.class.hpp"
-//weapon that's give missile
+# include "../AEntity.class.hpp"
 
-class Missile : public Weapon 
+class Missile : public AEntity
 {
     public:
-    Missile( void );
-	Missile( Missile const & src );
+    	Missile( void );
+        Missile( int damage, int speed );
+    	Missile( int damage, int direction, int speed );
+		Missile( Missile const & src );
 
-	virtual ~Missile( void );
+		virtual ~Missile( void );
 
-	Missile const &		operator=( Missile const & rhs );
-<<<<<<< HEAD
-=======
-    virtual void	onEntityHit ( void );
->>>>>>> minh
+		Missile const &		operator=( Missile const & rhs );
 
+    	virtual void		hit( const AEntity &s );
+
+		virtual Missile *	clone( void );
+		virtual Missile *	clone( int direction );
+
+        virtual bool        onAction( void );
+        virtual void        fire( void );
+
+        virtual bool        toDelete( void );
+
+		virtual int			getDealDamage( void ) const;
+
+        bool         getIsDestroy( void ) const;
+        void         setIsDestroy( bool b );
 
     protected:
-
+    	int					_deal_damage;
+    	bool				_is_destroy;
 
 
 
 };
 
 #endif
+

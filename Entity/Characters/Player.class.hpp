@@ -8,13 +8,24 @@
 
 #include "../AEntity.class.hpp"
 #include "Character.class.hpp"
-#include "../Weapons/Weapon.class.hpp"
 
 class Player:public Character
 {
     public:
+    	Player( void );
+    	Player( Player const & src );
+    	virtual ~Player( void );
 
-    virtual void	onEntityHit ( void );
+    	Player const &		operator=( Player const & rhs );
+
+        virtual void          fire( void );
+
+        void                    wait( void );
+
+        virtual void            hit( AEntity const & entity );
+		virtual bool    		move( void );
+		virtual bool			onMove( void );
+		void        move( int dx, int dy);
 
     protected:
 
